@@ -1,0 +1,6 @@
+    "custom/keeb": {
+        "format": "󰹋{}",
+        // "exec": "echo ; echo 󰹋 toggle keeb/touchpad",
+        "on-click": "sleep 0.1 && ~/.config/hypr/scripts/toggleKeyboard.sh",
+        "tooltip": true
+    },
