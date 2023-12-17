@@ -1,0 +1,11 @@
+[user]
+	name = Kevin Tran
+	email = 91237886+Kevonosdiaz@users.noreply.github.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[core]
+	editor = nvim
