@@ -76,6 +76,6 @@ keys = [
     Key([], "XF86MonBrightnessUp", lazy.spawn("brillo -q -A 8")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brillo -q -U 8")),
 
-    Key([mod], "l", lazy.spawn("xfce4-screensaver-command -l"), desc="Lock screen using xfce4-screensaver"),
+    Key([mod], "p", lazy.spawn("xfce4-screensaver-command -l"), desc="Lock screen using xfce4-screensaver"),
 
 ]
