@@ -85,5 +85,8 @@ screens = [
             ],
             30,  # height in px
             background="#404552"  # background color
-        ), ),
+        ), 
+        wallpaper='~/.config/qtile/mountains.jpg',
+        wallpaper_mode='stretch',
+    ),
 ]

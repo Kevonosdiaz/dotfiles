@@ -1,7 +1,9 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
 mod = "mod4"
-terminal = "xfce4-terminal"
+terminal = "alacritty"
+browser = "firefox"
+fileexplorer = "nemo"
 
 keys = [
     # Switch between windows
@@ -15,6 +17,8 @@ keys = [
         desc="Move window focus to other window"),
 
     Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
+    Key([mod], "f", lazy.spawn(browser), desc="spawn browser"),
+    Key([mod], "e", lazy.spawn(fileexplorer), desc="spawn file explorer"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -71,5 +75,7 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brillo -q -A 8")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brillo -q -U 8")),
+
+    Key([mod], "l", lazy.spawn("xfce4-screensaver-command -l"), desc="Lock screen using xfce4-screensaver"),
 
 ]
