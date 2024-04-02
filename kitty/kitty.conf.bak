@@ -4,7 +4,7 @@ italic_font      auto
 bold_italic_font auto
 
 font_size 14.0
-window_padding_width 2
+window_padding_width 25
 include themes/theme.conf
 #background_opacity 0.60
 #hide_window_decorations yes
@@ -16,9 +16,3 @@ tab_bar_style               powerline
 tab_powerline_style         slanted
 tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
 
-map ctrl+p nth_window -1
-
-# BEGIN_KITTY_THEME
-# Catppuccin-Macchiato
-include current-theme.conf
-# END_KITTY_THEME
