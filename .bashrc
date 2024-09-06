@@ -30,18 +30,33 @@ alias gs="git status"
 alias push="git push"
 alias pull="git pull"
 
-alias refresh-below="rm -rf build; mkdir build; cd build"
-alias refresh-here="cd ..; rm -rf build; mkdir build; cd build"
+alias refreshBelow="rm -rf build; mkdir build; cd build"
+alias refreshHere="cd ..; rm -rf build; mkdir build; cd build"
 
 alias python="python3"
 alias p3="python3"
 
-find-and-replace() {
+# Recursively replace string $1 with string $2 (may not work with whitespace?)
+findAndReplace() {
     git grep -rl "$1" . | xargs sed -i "s/"$1"/"$2"/g"
 }
 
 mcd() {
     mkdir "$1"; cd "$1"
+}
+
+mcdb() {
+    mkdir build; cd build
+}
+
+# See changes made from a commit compared to its predecessor
+getLocalDiff() {
+    git diff "$1"~ "$1" 
+}
+
+# See status of a commit (comment & files changed)
+getStatus() {
+    git show --name-status "$1"
 }
 
 
