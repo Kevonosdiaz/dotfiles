@@ -16,7 +16,20 @@ export NVM_DIR="$HOME/.nvm"
 alias config='/usr/bin/git --git-dir=/home/kevon/dotfiles --work-tree=/home/kevon'
 export PATH="$HOME/.config/emacs/bin:$PATH"
 # alias emacs="emacsclient -c -a 'emacs'"
+export PATH="$HOME/.ghcup/bin:$PATH"
+export PATH="/usr/bin/java:$PATH"
+export PATH="/usr/bin/javac:$PATH"
 
+alias ta="tmux attach"
+alias c="clear"
+alias gs="git status"
+alias ga="git add --all"
+alias gc="git commit -m"
+alias pull="git pull"
+alias push="git push"
+alias b="git branch"
+
+alias wshow="waydroid show-full-ui"
 
 # Nice to haves
 alias makej="make -j"
@@ -35,6 +48,8 @@ alias refreshHere="cd ..; rm -rf build; mkdir build; cd build"
 
 alias python="python3"
 alias p3="python3"
+alias r=". ranger"
+alias q="exit"
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
@@ -59,11 +74,3 @@ getStatus() {
     git show --name-status "$1"
 }
 
-
-# other aliases
-alias ls-socket="env | grep SSH_AUTH_SOCK"
-alias fixssh="eval $(tmux show-env -s |grep '^SSH_')"
-
-export PATH="$HOME/.ghcup/bin:$PATH"
-export PATH="/usr/bin/java:$PATH"
-export PATH="/usr/bin/javac:$PATH"
