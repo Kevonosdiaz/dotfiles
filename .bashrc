@@ -30,6 +30,8 @@ alias push="git push"
 alias b="git branch"
 
 alias wshow="waydroid show-full-ui"
+alias wstart="waydroid session start"
+alias wstop="waydroid session stop"
 
 # Nice to haves
 alias makej="make -j"
