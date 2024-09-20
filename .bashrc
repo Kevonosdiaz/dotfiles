@@ -20,6 +20,8 @@ export PATH="$HOME/.ghcup/bin:$PATH"
 export PATH="/usr/bin/java:$PATH"
 export PATH="/usr/bin/javac:$PATH"
 
+export EDITOR='nvim'
+
 alias ta="tmux attach"
 alias c="clear"
 alias gs="git status"
@@ -52,6 +54,7 @@ alias python="python3"
 alias p3="python3"
 alias r=". ranger"
 alias q="exit"
+alias cx="cd .."
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
