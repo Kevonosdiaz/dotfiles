@@ -54,6 +54,7 @@ alias python="python3"
 alias p3="python3"
 alias r=". ranger"
 alias q="exit"
+alias :q="exit"
 alias cx="cd .."
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
