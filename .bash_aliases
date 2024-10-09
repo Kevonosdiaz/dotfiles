@@ -36,7 +36,7 @@ alias ea="nvim ~/.bash_aliases"
 alias ewa="nvim ~/.bash_work_aliases"
 alias eb="nvim ~/.bashrc"
 alias resource="source ~/.bashrc"
-alias updateDotfiles="cp ~/.bashrc ~/.bash_aliases ~/dotfiles; cd ~/dotfiles"
+alias updateDotfiles="cp ~/.bashrc ~/.bash_aliases ~/dotfiles; cd ~/dotfiles; git status"
 alias cx="cd .."
 
 alias q="exit"
