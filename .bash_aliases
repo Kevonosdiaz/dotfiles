@@ -20,6 +20,7 @@ alias pull="git pull"
 alias branch="git branch"
 alias b="git branch"
 alias checkout="git checkout"
+alias co="git checkout"
 
 alias ta="tmux attach"
 
