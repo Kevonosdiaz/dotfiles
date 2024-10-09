@@ -23,13 +23,6 @@ alias checkout="git checkout"
 
 alias ta="tmux attach"
 
-alias wshow="waydroid show-full-ui"
-alias wstart="waydroid session start"
-alias wstop="waydroid session stop"
-
-alias q="exit"
-alias :q="exit"
-
 alias refreshBelow="rm -rf build; mkdir build; cd build"
 alias refreshHere="cd ..; rm -rf build; mkdir build; cd build"
 
@@ -43,7 +36,11 @@ alias ea="nvim ~/.bash_aliases"
 alias ewa="nvim ~/.bash_work_aliases"
 alias eb="nvim ~/.bashrc"
 alias resource="source ~/.bashrc"
+alias updateDotfiles="cp ~/.bashrc ~/.bash_aliases ~/dotfiles; cd ~/dotfiles"
 alias cx="cd .."
+
+alias q="exit"
+alias :q="exit"
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
