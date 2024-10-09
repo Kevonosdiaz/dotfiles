@@ -18,7 +18,17 @@ alias gs="git status"
 alias push="git push"
 alias pull="git pull"
 alias branch="git branch"
+alias b="git branch"
 alias checkout="git checkout"
+
+alias ta="tmux attach"
+
+alias wshow="waydroid show-full-ui"
+alias wstart="waydroid session start"
+alias wstop="waydroid session stop"
+
+alias q="exit"
+alias :q="exit"
 
 alias refreshBelow="rm -rf build; mkdir build; cd build"
 alias refreshHere="cd ..; rm -rf build; mkdir build; cd build"
@@ -26,6 +36,7 @@ alias refreshHere="cd ..; rm -rf build; mkdir build; cd build"
 alias python="python3"
 alias p3="python3"
 alias r=". ranger"
+alias n="nvim"
 
 alias e="export"
 alias ea="nvim ~/.bash_aliases"

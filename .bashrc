@@ -22,61 +22,12 @@ export PATH="/usr/bin/javac:$PATH"
 
 export EDITOR='nvim'
 
-alias ta="tmux attach"
-alias c="clear"
-alias gs="git status"
-alias ga="git add --all"
-alias gc="git commit -m"
-alias pull="git pull"
-alias push="git push"
-alias b="git branch"
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-alias wshow="waydroid show-full-ui"
-alias wstart="waydroid session start"
-alias wstop="waydroid session stop"
-
-# Nice to haves
-alias makej="make -j"
-alias mj="make -j"
-alias c="clear"
-alias g="git"
-alias ga="git add --all"
-alias gc="git commit -m"
-alias gd="git diff"
-alias gs="git status"
-alias push="git push"
-alias pull="git pull"
-
-alias refreshBelow="rm -rf build; mkdir build; cd build"
-alias refreshHere="cd ..; rm -rf build; mkdir build; cd build"
-
-alias python="python3"
-alias p3="python3"
-alias r=". ranger"
-alias q="exit"
-alias :q="exit"
-alias cx="cd .."
-
-# Recursively replace string $1 with string $2 (may not work with whitespace?)
-findAndReplace() {
-    git grep -rl "$1" . | xargs sed -i "s/"$1"/"$2"/g"
-}
-
-mcd() {
-    mkdir "$1"; cd "$1"
-}
-
-mcdb() {
-    mkdir build; cd build
-}
-
-# See changes made from a commit compared to its predecessor
-getLocalDiff() {
-    git diff "$1"~ "$1" 
-}
-
-# See status of a commit (comment & files changed)
-getStatus() {
-    git show --name-status "$1"
-}
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
