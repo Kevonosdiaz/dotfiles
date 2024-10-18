@@ -25,8 +25,6 @@ alias co="git checkout"
 alias gwl="git worktree list"
 alias gr="git remote"
 
-alias grep="rg"
-
 TERM=screen-256color-bce
 alias tmux="TERM=screen-256color-bce tmux"
 alias ta="tmux attach"
@@ -46,6 +44,7 @@ alias eb="nvim ~/.bashrc"
 alias resource="source ~/.bashrc"
 alias s="source ~/.bashrc"
 alias updateDotfiles="cp ~/.bashrc ~/.bash_aliases ~/dotfiles; cd ~/dotfiles; git status"
+alias fetchDotfiles="cd ~/dotfiles; cp .bashrc .bash_aliases ..;"
 alias cx="cd .."
 alias cxx="cd ../.."
 
