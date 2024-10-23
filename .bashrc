@@ -27,7 +27,7 @@ export PATH="$PATH:$HOME/neovim/bin"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
 # if using starship
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
 
 # Set up fzf key bindings and fuzzy completion
 # source /usr/share/doc/fzf/examples/key-bindings.bash
