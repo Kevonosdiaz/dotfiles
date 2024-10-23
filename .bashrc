@@ -26,6 +26,9 @@ export PATH="$PATH:$HOME/neovim/bin"
 # if using emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
+# if using starship
+eval "$(starship init bash)"
+
 # Set up fzf key bindings and fuzzy completion
 # source /usr/share/doc/fzf/examples/key-bindings.bash
 # source /usr/share/doc/fzf/examples/completion.bash
@@ -115,6 +118,9 @@ if [ -f ~/.bash_work_aliases ]; then
     . ~/.bash_work_aliases
 fi
 
+if [ -f ~/.bash_linuxworkstation ]; then
+    . ~/.bash_linuxworkstation
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
