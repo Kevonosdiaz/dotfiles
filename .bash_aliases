@@ -25,7 +25,7 @@ alias co="git checkout"
 alias gwl="git worktree list"
 alias gr="git remote"
 
-TERM=screen-256color-bce
+# TERM=screen-256color-bce
 alias tmux="TERM=screen-256color-bce tmux"
 alias ta="tmux attach"
 
@@ -41,6 +41,9 @@ alias e="export"
 alias ea="nvim ~/.bash_aliases"
 alias ewa="nvim ~/.bash_work_aliases"
 alias eb="nvim ~/.bashrc"
+alias en="nvim ~/.config/nvim/init.lua"
+alias enp="nvim ~/.config/nvim/lua/custom/plugins/init.lua"
+alias cdn="cd ~/.config/nvim"
 alias resource="source ~/.bashrc"
 alias s="source ~/.bashrc"
 alias updateDotfiles="cp ~/.bashrc ~/.bash_aliases ~/dotfiles; cd ~/dotfiles; git status"
