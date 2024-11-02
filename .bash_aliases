@@ -55,6 +55,10 @@ alias cxx="cd ../.."
 alias q="exit"
 alias :q="exit"
 
+# Arch Linux specific
+alias yay="yay --aur"
+alias ys="yay -Sc"
+
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
     git grep -rl "$1" . | xargs sed -i "s/"$1"/"$2"/g"
