@@ -58,6 +58,8 @@ alias :q="exit"
 # Arch Linux specific
 alias yay="yay --aur"
 alias ys="yay -Sc"
+alias wshow="waydroid show-full-ui"
+alias wstop="waydroid session stop"
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
