@@ -24,6 +24,7 @@ alias checkout="git checkout"
 alias co="git checkout"
 alias gwl="git worktree list"
 alias gr="git remote"
+alias fd="find . -name"
 
 # TERM=screen-256color-bce
 alias tmux="TERM=screen-256color-bce tmux"
