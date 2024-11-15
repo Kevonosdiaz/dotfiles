@@ -47,9 +47,9 @@
 (setq org-directory "~/org/")
 
 ;; (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
-(setq tramp-shell-prompt-pattern
-      ".*https://microsoft\\.com/devicelogin.*")
-(setq tramp-verbose 9)
+;(setq tramp-shell-prompt-pattern
+;      ".*https://microsoft\\.com/devicelogin.*")
+;(setq tramp-verbose 9)
 
 (setq confirm-kill-emacs nil)
 
