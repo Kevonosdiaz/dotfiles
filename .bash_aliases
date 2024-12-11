@@ -32,6 +32,7 @@ alias ta="tmux attach"
 
 alias refreshBelow="rm -rf build; mkdir build; cd build"
 alias refreshHere="cd ..; rm -rf build; mkdir build; cd build"
+alias refresh="refreshHere"
 
 alias python="python3"
 alias p3="python3"
@@ -52,6 +53,7 @@ alias updateDotfiles="cp ~/.bashrc ~/.bash_aliases .tmux.conf ~/dotfiles; cd ~/d
 alias fetchDotfiles="cp ~/dotfiles/.bashrc ~/dotfiles/.bash_aliases ~/dotfiles/.tmux.conf ~/;"
 alias cx="cd .."
 alias cxx="cd ../.."
+alias cxxx="cd ../../.."
 
 alias q="exit"
 alias :q="exit"
