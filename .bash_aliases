@@ -24,15 +24,21 @@ alias checkout="git checkout"
 alias co="git checkout"
 alias gwl="git worktree list"
 alias gr="git remote"
+alias remote="git remote -V"
 alias fd="rg --files | rg"
 
-# TERM=screen-256color-bce
-alias tmux="TERM=screen-256color-bce tmux"
+# Docker
+alias dps="docker ps"
+alias di="docker images"
+
 alias ta="tmux attach"
 
 alias refreshBelow="rm -rf build; mkdir build; cd build"
 alias refreshHere="cd ..; rm -rf build; mkdir build; cd build"
 alias refresh="refreshHere"
+alias srefreshBelow="sudo rm -rf build; mkdir build; cd build"
+alias srefreshHere="cd ..; srefreshBelow"
+alias srefresh="srefreshHere"
 
 alias python="python3"
 alias p3="python3"
@@ -45,8 +51,8 @@ alias ewa="nvim ~/.bash_work_aliases"
 alias eb="nvim ~/.bashrc"
 alias et="nvim ~/.tmux.conf"
 alias en="nvim ~/.config/nvim/init.lua"
-alias enp="nvim ~/.config/nvim/lua/custom/plugins/init.lua"
-alias cdn="cd ~/.config/nvim"
+alias enp="nvim ~/.config/nvim/lua/custom/plugins.lua"
+alias cdn="cd ~/.config/nvim/lua/custom/"
 alias resource="source ~/.bashrc"
 alias s="source ~/.bashrc"
 alias updateDotfiles="cp ~/.bashrc ~/.bash_aliases .tmux.conf ~/dotfiles; cd ~/dotfiles; git status"
@@ -56,7 +62,6 @@ alias cxx="cd ../.."
 alias cxxx="cd ../../.."
 
 alias q="exit"
-alias :q="exit"
 
 # Arch Linux specific
 alias yay="yay --aur"
