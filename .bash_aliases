@@ -24,7 +24,7 @@ alias checkout="git checkout"
 alias co="git checkout"
 alias gwl="git worktree list"
 alias gr="git remote"
-alias remote="git remote -V"
+alias remote="git remote -v"
 alias fd="rg --files | rg"
 
 # Docker
