@@ -26,7 +26,7 @@ export PATH="$PATH:$HOME/neovim/bin"
 # if using emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
-# if using starship
+# starship terminal prompt
 # eval "$(starship init bash)"
 
 # Set up fzf key bindings and fuzzy completion
@@ -132,3 +132,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# zoxide as cd improvement, install via:
+# curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+eval "$(zoxide init bash)"
