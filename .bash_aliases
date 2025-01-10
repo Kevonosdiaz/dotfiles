@@ -10,6 +10,9 @@ alias lah="ls -lah"
 alias makej="make -j"
 alias mj="make -j"
 alias c="clear"
+alias fd="rg --files | rg"
+
+# Git stuff
 alias g="git"
 alias ga="git add --all"
 alias gc="git commit -m"
@@ -25,7 +28,17 @@ alias co="git checkout"
 alias gwl="git worktree list"
 alias gr="git remote"
 alias remote="git remote -v"
-alias fd="rg --files | rg"
+
+# yadm stuff
+alias y="yadm"
+alias ya="yadm add"
+alias yaa="yadm add -u" # update existing files
+alias yc="yadm commit -m"
+alias yd="yadm diff"
+alias ys="yadm status"
+alias ylog="yadm log"
+alias ypush="yadm push"
+alias ypull="yadm pull"
 
 # Docker
 alias dps="docker ps"
@@ -65,7 +78,7 @@ alias q="exit"
 
 # Arch Linux specific
 alias yay="yay --aur"
-alias ys="yay -Sc"
+alias yay-clear="yay -Sc"
 alias wshow="waydroid show-full-ui"
 alias wstop="waydroid session stop"
 
