@@ -53,8 +53,11 @@ alias srefreshBelow="sudo rm -rf build; mkdir build; cd build"
 alias srefreshHere="cd ..; srefreshBelow"
 alias srefresh="srefreshHere"
 
-alias python="python3"
+# alias python="python3"
 alias p3="python3"
+alias pvenv="python3 -m venv env"
+alias psource="source env/bin/activate"
+
 alias r=". ranger"
 alias n="nvim"
 
