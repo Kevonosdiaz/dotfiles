@@ -1,6 +1,0 @@
-    "custom/touchpad": {
-        "format": "󰤳{}",
-        // "exec": "echo ; echo 󰤳 toggle touchpad",
-        "on-click": "sleep 0.1 && ~/.config/hypr/scripts/toggleTouchpad.sh",
-        "tooltip": true
-    },
