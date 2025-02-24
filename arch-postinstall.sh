@@ -10,11 +10,17 @@ sudo systemctl enable NetworkManager.service
 sudo systemctl enable paccache.timer
 sudo systemctl enable fstrim.timer
 
-# Yay as AUR helper
+# Yay as AUR helper + AUR packages
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-yay -S --noconfirm --needed spicetify-cli spicetify-marketplace-bin moc-pulse
+yay -S --noconfirm --needed spotify google-chrome spicetify-cli spicetify-marketplace-bin moc-pulse vesktop-bin youtube-music-bin visual-studio-code-bin
 
+# Spicetify setup for AUR Spotify install
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
+cp -r ~/dotfiles/spicetify ~/.config/
 
+spicetify
+spicetify backup apply enable-devtools
