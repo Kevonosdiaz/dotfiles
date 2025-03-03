@@ -3,7 +3,7 @@ sudo rmmod pcspkr
 sudo rmmod snd_pcsp
 
 # Install stuff and services
-sudo pacman -S --noconfirm --needed bluez bluez-utils git pipewire easyeffects vlc lsp-plugins amd-ucode noto-fonts noto-fonts-cjk noto-fonts-emoji timeshift fastfetch flameshot sddm pacman-contrib zoxide ranger fzf ripgrep python3 alacritty kitty btop bat ncdu vim neovim starship tmux unzip
+sudo pacman -S --noconfirm --needed bluez bluez-utils git pipewire easyeffects vlc lsp-plugins amd-ucode noto-fonts noto-fonts-cjk noto-fonts-emoji timeshift fastfetch flameshot sddm pacman-contrib zoxide ranger fzf ripgrep python3 alacritty kitty btop bat ncdu vim neovim starship tmux unzip pamixer feh brightnessctl playerctl zathura
 sudo systemctl enable --now bluetooth.service
 sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
