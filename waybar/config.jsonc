@@ -9,6 +9,7 @@
     "clock"
   ],
   "modules-right": [
+    "tray",
     "pulseaudio",
     // "backlight",
     "temperature",
@@ -16,8 +17,7 @@
     "memory",
     "network",
     // "battery",
-    "custom/powermenu",
-    "tray"
+    "custom/powermenu"
   ],
   "custom/launcher": {
     "format": "󰣇 ",
@@ -125,12 +125,12 @@
     "format": " {temperatureC}°C"
   },
   "custom/powermenu": {
-    "format": "",
+    "format": " ",
     // "on-click": "~/.config/rofi/powermenu.sh",
     "tooltip": false
   },
   "tray": {
-    "icon-size": 15,
+    "icon-size": 8,
     "spacing": 5
   },
 }
