@@ -79,6 +79,9 @@ input "type:keyboard" {
     # Kill focused window
     bindsym $mod+w kill
 
+    # Toggle waybar
+    bindsym $mod+n exec killall -SIGUSR1 waybar
+
     # Start your launcher
     bindsym $mod+r exec $menu
 
@@ -237,7 +240,11 @@ bar {
     #     inactive_workspace #32323200 #32323200 #5c5c5c
     # }
     swaybar_command waybar
+    # hidden_state hide
+    # mode hide
+    # modifier Mod4
 }
+
 
 # Remove titlebar border
 default_border none
