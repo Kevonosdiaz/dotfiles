@@ -64,6 +64,8 @@ input "type:keyboard" {
     xkb_options ctrl:nocaps
 }
 
+focus_follows_mouse no
+
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
@@ -85,6 +87,7 @@ input "type:keyboard" {
 
     # Start your launcher
     bindsym $mod+r exec $menu
+    bindsym --no-repeat --release Super_L exec pkill $menu || $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -251,6 +254,7 @@ bar {
     # mode hide
     # modifier Mod4
 }
+
 
 
 # Remove titlebar border
