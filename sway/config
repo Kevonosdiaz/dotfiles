@@ -58,8 +58,8 @@ exec swayidle -w \
 #
 
 # Desktop Setup
-output HDMI-A-1 pos -1920 0 mode 1920x1080@143.998Hz
-output DP-2 scale 1.25 mode 2560x1440@359.999Hz
+output HDMI-A-1 pos 0 0 mode 1920x1080@143.998Hz
+output DP-2 pos 1920 0 scale 1.25 mode 2560x1440@359.999Hz
 
 input type:pointer scroll_factor 1.0
 
