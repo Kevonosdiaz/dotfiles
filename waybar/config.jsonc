@@ -15,8 +15,8 @@
     "temperature",
     "cpu",
     "memory",
+    "battery",
     "network",
-    // "battery",
     "custom/powermenu"
   ],
   "custom/launcher": {
@@ -56,16 +56,18 @@
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip": false,
   },
-  // "battery": {
-  //   "interval": 10,
-  //   "states": {
-  //     "warning": 20,
-  //     "critical": 10
-  //   },
-  //   "format": "{icon} {capacity}%", //   "format-icons": ["", "", "", "", "", "", "", "", ""], //   "format-full": "{icon} {capacity}%",
-  //   "format-charging": " {capacity}%",
-  //   "tooltip": false
-  // },
+  "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{icon} {capacity}%", 
+    "format-icons": ["", "", "", "", "", "", "", "", ""], 
+    "format-full": "{icon} {capacity}%",
+    "format-charging": "  {capacity}%",
+    "tooltip": false
+  },
   "clock": {
   //   // "on-click": "~/.config/waybar/switch_style1.sh &",
   //   // "on-click-right": "~/.config/waybar/wallpaper_random.sh &",
