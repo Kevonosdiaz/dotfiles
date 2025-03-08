@@ -80,7 +80,6 @@ alias cxxx="cd ../../.."
 alias q="exit"
 
 # Arch Linux specific
-alias yay="yay --aur"
 alias yay-clear="yay -Sc"
 alias wshow="waydroid show-full-ui"
 alias wstop="waydroid session stop"
