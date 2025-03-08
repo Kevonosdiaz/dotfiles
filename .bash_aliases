@@ -74,6 +74,7 @@ alias wshow="waydroid show-full-ui"
 alias wstop="waydroid session stop"
 alias wwidth="waydroid prop set persist.waydroid.width"
 alias wheight="waydroid prop set persist.waydroid.height"
+alias wrestore-dim="wwidth 2040 && wheight 1100"
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
