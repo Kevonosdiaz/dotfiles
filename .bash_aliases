@@ -29,17 +29,6 @@ alias gwl="git worktree list"
 alias gr="git remote"
 alias remote="git remote -v"
 
-# yadm stuff
-alias y="yadm"
-alias ya="yadm add"
-alias yaa="yadm add -u" # update existing files
-alias yc="yadm commit -m"
-alias yd="yadm diff"
-alias ys="yadm status"
-alias ylog="yadm log"
-alias ypush="yadm push"
-alias ypull="yadm pull"
-
 # Docker
 alias dps="docker ps"
 alias di="docker images"
@@ -83,6 +72,8 @@ alias q="exit"
 alias yay-clear="yay -Sc"
 alias wshow="waydroid show-full-ui"
 alias wstop="waydroid session stop"
+alias wwidth="waydroid prop set persist.waydroid.width"
+alias wheight="waydroid prop set persist.waydroid.height"
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
