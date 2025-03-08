@@ -87,7 +87,7 @@ focus_follows_mouse no
 
     # Start your launcher
     bindsym $mod+r exec $menu
-    bindsym --no-repeat --release Super_L exec pkill $menu || $menu
+    # bindsym --no-repeat --release Super_L exec pkill $menu || $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
