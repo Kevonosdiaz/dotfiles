@@ -1,22 +1,38 @@
+#!/bin/bash
+
+# Expected to be run after running arch-chroot /mnt
+
 # Install stuff and services
-sudo pacman -S --noconfirm --needed bluez bluez-utils pipewire easyeffects vlc lsp-plugins amd-ucode noto-fonts noto-fonts-cjk noto-fonts-emoji timeshift fastfetch flameshot sddm pacman-contrib zoxide ranger fzf ripgrep python3 alacritty kitty btop bat ncdu vim neovim starship tmux unzip pamixer feh brightnessctl playerctl zathura gnome-keyring libsecret
-sudo systemctl enable --now bluetooth.service
-sudo systemctl enable sddm.service
-sudo systemctl enable NetworkManager.service
-sudo systemctl enable paccache.timer
-sudo systemctl enable fstrim.timer
+pacman -S --noconfirm --needed bluez bluez-utils pipewire easyeffects vlc lsp-plugins amd-ucode noto-fonts noto-fonts-cjk noto-fonts-emoji timeshift fastfetch flameshot sddm pacman-contrib zoxide ranger fzf ripgrep python3 alacritty kitty btop bat ncdu vim neovim starship tmux unzip pamixer feh brightnessctl playerctl zathura gnome-keyring libsecret firefox networkmanager network-manager-applet tree ntfs-3g os-prober linux-headers linux-lts linux-lts-headers efibootmgr wpa_supplicant
 
-# Yay as AUR helper + AUR packages
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+systemctl enable --now bluetooth.service
+systemctl enable sddm.service
+systemctl enable NetworkManager.service
+systemctl enable paccache.timer
+systemctl enable fstrim.timer
 
-yay -S --noconfirm --needed spotify google-chrome spicetify-cli spicetify-marketplace-bin moc-pulse vesktop-bin youtube-music-bin visual-studio-code-bin
+ln -sf /usr/share/zoneinfo/Canada/Mountain /etc/localtime
+hwclock --systohc
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
-# Spicetify setup for AUR Spotify install
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
-cp -r ~/dotfiles/spicetify ~/.config/
+echo "Manually add hostname to /etc/hostname"
+echo "Manually add hosts file at /etc/hosts" # TODO add example config
 
-spicetify
-spicetify backup apply enable-devtools
+# Setup root and user
+echo "Root passwd:"
+passwd
+useradd -m kevon
+echo "Passwd for user kevon:"
+passwd kevon
+usermod -aG wheel,audio,video,optical,storage,power,input kevon
+visudo
+
+# Setup systemd-boot
+bootctl install
+
+echo "Manually update /boot/loader/loader.conf and /boot/loader/entries/ as needed"
+# TODO Add example config
+echo "Append last line of entry using following command to use PARTUUID more easily:"
+echo "\techo\t\"options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/[partition here]) rw\" >> /boot/loader/entries/(your entry here).conf"
