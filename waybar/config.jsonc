@@ -27,31 +27,13 @@
   "sway/workspaces": {
     "disable-scroll": true,
   },
-  // "idle_inhibitor": {
-  //   "format": "{icon}",
-  //   "format-icons": {
-  //     "activated": "",
-  //     "deactivated": ""
-  //   },
-  //   "tooltip": false
-  // },
-  // "backlight": {
-  //   "device": "intel_backlight",
-  //   "on-scroll-up": "light -A 5",
-  //   "on-scroll-down": "light -U 5",
-  //   "format": "{icon} {percent}%",
-  //   "format-icons": ["","","",""]
-  // },
   "pulseaudio": {
     "scroll-step": 1,
     "format": "{icon} {volume}%", 
-    "format-muted": "婢 Muted",
+    "format-muted": "󰖁 Muted",
     "format-icons": {
       "default": ["", "", ""]
     },
-    // "states": {
-    //   "warning": 85,
-    // },
     "scroll-step": 1,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip": false,
@@ -63,9 +45,9 @@
       "critical": 10
     },
     "format": "{icon} {capacity}%", 
-    "format-icons": ["", "", "", "", "", "", "", "", ""], 
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂁", "󰂂", "󰁹"], 
     "format-full": "{icon} {capacity}%",
-    "format-charging": "  {capacity}%",
+    "format-charging": " 󰂇  {capacity}%",
     "tooltip": false
   },
   "clock": {
@@ -80,14 +62,14 @@
   },
   "memory": {
     "interval": 1,
-    "format": "﬙ {percentage}%",
+    "format": " {percentage}%",
     "states": {
       "warning": 85,
     },
   },
   "cpu": {
     "interval": 1,
-    "format": " {usage}%"
+    "format": "󰍛 {usage}%"
   },
   "custom/spotify": {
     "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
@@ -113,11 +95,10 @@
   // },
   "network": {
     "interval": 1,
-    "format-wifi": "說 {essid}",
-    // "format-ethernet": "  {ifname} ({ipaddr})",
-    "format-ethernet": " ",
-    "format-linked": "說 {essid} (No IP)",
-    "format-disconnected": "說 Disconnected",
+    "format-wifi": "󰒢 {essid}",
+    "format-ethernet": "󰈀 ",
+    "format-linked": "󰒢 {essid} (No IP)",
+    "format-disconnected": "󰒢 Disconnected",
     "tooltip": false
   },
   "temperature": {
