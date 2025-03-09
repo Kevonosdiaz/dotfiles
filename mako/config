@@ -1,0 +1,26 @@
+font=Jetbrains Mono Nerd Font
+format=<b>%a ⏵</b> %s\n%b
+sort=-time
+layer=overlay
+background-color=#1E1D2F
+progress-color=over #302D41
+background-color=#2e3440
+width=300
+height=110
+margin=5
+padding=0,5,10
+border-size=2
+border-color=#96CDFB
+border-radius=0
+icons=0
+max-icon-size=64
+text-color=#D9E0EE
+default-timeout=10
+ignore-timeout=1
+
+[urgency=normal]
+border-color=#d08770
+
+[urgency=high]
+border-color=#F8BD96
+default-timeout=0
