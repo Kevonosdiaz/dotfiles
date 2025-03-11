@@ -1,0 +1,7 @@
+2025-03-10 18:49:17,507 __main__ INFO:184 Creating player manager
+2025-03-10 18:49:17,507 __main__ INFO:186 Filtering for player: spotify,YoutubeMusic
+2025-03-10 18:49:17,509 __main__ DEBUG:47 YoutubeMusic is not the filtered player, skipping it
+2025-03-10 18:49:17,509 __main__ DEBUG:47 firefox is not the filtered player, skipping it
+2025-03-10 18:49:17,509 __main__ DEBUG:47 spotify is not the filtered player, skipping it
+2025-03-10 18:49:17,509 __main__ INFO:52 Starting main loop
+2025-03-10 18:49:35,100 __main__ INFO:18 Received signal to stop, exiting

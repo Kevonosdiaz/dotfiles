@@ -3,7 +3,7 @@
     "custom/launcher",
     "sway/workspaces",
     // "idle_inhibitor",
-    "custom/spotify",
+    "custom/music",
   ],
   "modules-center": [
     "clock"
@@ -39,7 +39,7 @@
     "tooltip": false,
   },
   "battery": {
-    "interval": 10,
+    "interval": 30,
     "states": {
       "warning": 20,
       "critical": 10
@@ -57,23 +57,24 @@
     "interval": 1,
     "format": "{:%I:%M %p  %A %b %d}",
     "tooltip": true,
-    /* "tooltip-format": "{:%A, %d %B %Y}\n<tt>{calendar}</tt>" */
-    "tooltip-format": "上午：高数\n下午：Ps\n晚上：Golang\n<tt>{calendar}</tt>",
+    "tooltip-format": "{:%A, %d %B %Y}\n<tt>{calendar}</tt>"
+    // "tooltip-format": "上午：高数\n下午：Ps\n晚上：Golang\n<tt>{calendar}</tt>",
   },
   "memory": {
-    "interval": 1,
+    "interval": 5,
     "format": " {percentage}%",
     "states": {
       "warning": 85,
     },
   },
   "cpu": {
-    "interval": 1,
+    "interval": 5,
     "format": "󰍛 {usage}%"
   },
-  "custom/spotify": {
-    "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
-    "format": " {}   ",
+  "custom/music": {
+    // "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+    "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player YoutubeMusic",
+    "format": " {} 󰎆 ",
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
@@ -109,7 +110,7 @@
   },
   "custom/powermenu": {
     "format": " ",
-    // "on-click": "~/.config/rofi/powermenu.sh",
+    "on-click": "~/.config/rofi/scripts/powermenu_t2",
     "tooltip": false
   },
   "tray": {
