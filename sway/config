@@ -22,9 +22,9 @@ set $editor code
 set $file dolphin
 
 # Startup
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec nm-applet
 exec blueman-applet
-exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 # exec dunst
 
 ### Idle configuration
@@ -42,6 +42,8 @@ exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ss
 
 set $lock 'swaylock -f'
 bindswitch --reload --locked lid:on exec $lock
+bindsym $mod+Escape exec $lock
+
 
 # Desktop Setup
 set $disp1 "DP-2"
