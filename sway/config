@@ -25,6 +25,7 @@ set $file dolphin
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec nm-applet
 exec blueman-applet
+exec_always autotiling
 # exec dunst
 
 ### Idle configuration
