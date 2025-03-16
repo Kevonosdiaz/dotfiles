@@ -26,7 +26,6 @@ exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ss
 exec nm-applet
 # exec blueman-applet
 exec_always autotiling
-workspace 4
 # exec_always gamescope -e -f -W 2560 -H 1440 -r 360 --force-grab-cursor -- steam
 # exec dunst
 
