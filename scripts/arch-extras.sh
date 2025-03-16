@@ -17,6 +17,9 @@ spicetify backup apply enable-devtools
 
 systemctl enable --now auto-cpufreq.service
 
+# Install Rust-based mediaplayer detector
+cargo install --git https://github.com/stefur/lizzy lizzy
+
 # Add Windows to systemd boot
 # Find EFI partition where Windows exists, mount it to /mnt
 # sudo cp -ax /mnt/EFI/Microsoft /boot/EFI/

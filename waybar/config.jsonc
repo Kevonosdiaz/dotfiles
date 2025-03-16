@@ -73,9 +73,19 @@
   },
   "custom/music": {
     // "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
-    "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player YoutubeMusic",
-    "format": " {} 󰎆 ",
+    // "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player YoutubeMusic",
+    // "format": " {} 󰎆 ",
+
+    "format": " {icon} {text} 󰎆 ",
+    "exec": "~/.cargo/bin/lizzy --mediaplayer ''",
+    "format-icons": {
+      "Playing": "󰐊",
+      "Paused": "󰏤"
+    },
     "return-type": "json",
+    "max-length": 70,
+    "tooltip": false,
+    "escape": true,
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
