@@ -22,6 +22,7 @@ HISTFILESIZE=20000
 # default editor
 export EDITOR='nvim'
 export PATH="$PATH:$HOME/neovim/bin"
+export MANPAGER='nvim +Man!'
 
 # if using emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
