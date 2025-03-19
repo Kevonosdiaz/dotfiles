@@ -13,6 +13,7 @@ alias c="clear"
 alias fd="rg --files | rg"
 
 # Git stuff
+alias lg="lazygit"
 alias g="git"
 alias ga="git add --all"
 alias gc="git commit -m"
@@ -49,6 +50,7 @@ alias psource="source env/bin/activate"
 
 alias r=". ranger"
 alias n="nvim"
+alias wm="wikiman"
 
 alias e="export"
 alias ea="nvim ~/.bash_aliases"
@@ -67,6 +69,7 @@ alias cxx="cd ../.."
 alias cxxx="cd ../../.."
 
 alias q="exit"
+alias se="sudoedit"
 
 # Arch Linux specific
 alias yay-clear="yay -Sc"
@@ -76,6 +79,7 @@ alias wwidth="waydroid prop set persist.waydroid.width"
 alias wheight="waydroid prop set persist.waydroid.height"
 alias wrestore-dim="wwidth 2040 && wheight 1100"
 alias spawn-gs-steam="gamescope -e -f -W 2560 -H 1440 -r 360 --force-grab-cursor -- steam"
+alias spawn-steam-os3="/usr/bin/steam -steamos3 %U"
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
