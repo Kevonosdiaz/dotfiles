@@ -27,6 +27,9 @@ export MANPAGER='nvim +Man!'
 # if using emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
+# lazygit
+export PATH="$HOME/lazygit/:$PATH"
+
 # starship terminal prompt
 # eval "$(starship init bash)"
 
