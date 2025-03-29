@@ -1,0 +1,6 @@
+# Adjust window rules for specific applications
+for_window [app_id="pavucontrol-qt"] floating enable
+for_window [app_id="pavucontrol-qt"] resize set height 720 960
+for_window [app_id="pavucontrol-qt"] opacity 0.95
+for_window [app_id="pop-up"] floating enable
+for_window [app_id="bubble"] floating enable

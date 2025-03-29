@@ -22,20 +22,13 @@ set $editor code
 set $file dolphin
 
 # Startup
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec nm-applet
+# exec steam
 # exec blueman-applet
 exec_always autotiling
-# exec_always gamescope -e -f -W 2560 -H 1440 -r 360 --force-grab-cursor -- steam
-# exec dunst
 
-# Window Rules
-# for_window [title=".*Steam.*"] workspace 4
-
-### Idle configuration
-#
-# Example configuration:
-#
 # exec swayidle -w \
 #          timeout 1800 'swaylock -f -c 000000' \
 #          timeout 3600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
@@ -56,29 +49,6 @@ set $disp2 "HDMI-A-1"
 output HDMI-A-1 pos 0 0 mode 1920x1080@143.998Hz
 output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25
     
-# Laptop Stuff
-input "type:touchpad" {
-    dwt enabled
-    tap enabled
-    natural_scroll enabled
-    click_method clickfinger
-}
-
-input type:pointer scroll_factor 1.0
-
-input * {
-    repeat_rate 50
-    repeat_delay 350
-    accel_profile "flat" # No mouse acceleration
-}
-
-# Caps is ctrl
-input "type:keyboard" {
-    xkb_layout us
-    xkb_options ctrl:nocaps
-}
-
-focus_follows_mouse no
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -89,9 +59,11 @@ focus_follows_mouse no
 #
     # Spawn apps
     bindsym $mod+Return exec $term
+    bindsym $mod+Shift+Return exec $term --class="float"
     bindsym $mod+f exec $browser
     bindsym $mod+c exec $editor
     bindsym $mod+e exec $file
+    bindsym $mod+Shift+v exec pavucontrol-qt
 
     # Kill focused window
     bindsym $mod+w kill
@@ -241,6 +213,17 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+x mode "resize"
+
+# Quicker resize
+bindsym $mod+Ctrl+h             resize shrink width  5 px or 5 ppt
+bindsym $mod+Ctrl+k             resize grow   height 5 px or 5 ppt
+bindsym $mod+Ctrl+j             resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+l             resize grow   width  5 px or 5 ppt
+bindsym $mod+Ctrl+Left          resize shrink width  5 px or 5 ppt
+bindsym $mod+Ctrl+Up            resize grow   height 5 px or 5 ppt
+bindsym $mod+Ctrl+Down          resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+Right         resize grow   width  5 px or 5 ppt
+
 #
 # Utilities:
 #
@@ -302,3 +285,5 @@ titlebar_border_thickness 0
 gaps inner 8
 
 include /etc/sway/config.d/*
+include ~/.config/sway/windowrules
+include ~/.config/sway/input
