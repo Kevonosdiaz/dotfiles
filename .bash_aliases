@@ -71,13 +71,14 @@ alias cxxx="cd ../../.."
 alias q="exit"
 alias se="sudoedit"
 
-# Arch Linux specific
+# Arch Linux specific / desktop setup
 alias yay-clear="yay -Sc"
 alias wshow="waydroid show-full-ui"
 alias wstop="waydroid session stop"
 alias wwidth="waydroid prop set persist.waydroid.width"
 alias wheight="waydroid prop set persist.waydroid.height"
 alias wrestore-dim="wwidth 2040 && wheight 1100"
+alias dl-audio-playlist='yt-dlp -x --audio-quality 0 --no-keep-video --embed-thumbnail --embed-metadata -o "%(title)s"'
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
