@@ -250,6 +250,10 @@ bindsym $mod+Ctrl+Right         resize grow   width  5 px or 5 ppt
     bindsym --locked XF86AudioPrev exec playerctl previous
     bindsym --locked XF86AudioNext exec playerctl next
 
+    bindsym --locked Mod1+XF86AudioPlay exec mocp -G
+    bindsym --locked Mod1+XF86AudioPrev exec mocp -r
+    bindsym --locked Mod1+XF86AudioNext exec mocp -f
+
 
 #
 # Status Bar:

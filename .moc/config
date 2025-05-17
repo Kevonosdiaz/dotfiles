@@ -30,9 +30,11 @@
 #     Fastdir3 = ${MusicDir}/mp3/rap
 #     Fastdir4 = ${MusicDir}/mp3/etc
 #
-MusicDir = ~/Music
-Fastdir1 = ${MusicDir}/Favourites
-Fastdir2 = ${MusicDir}/Main
+# MusicDir = ~/Music
+MusicDir = ~/sync/music
+# Fastdir1 = ${MusicDir}/Favourites
+# Fastdir2 = ${MusicDir}/Main
+Fastdir1 = ${MusicDir}
 # Variable names are limited to those accepted by the BASH shell; that
 # is, those comprising the upper- and lowercase ASCII characters, digits
 # and the underscore.
