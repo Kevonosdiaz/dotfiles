@@ -11,6 +11,7 @@ alias makej="make -j"
 alias mj="make -j"
 alias c="clear"
 alias fd="rg --files | rg"
+alias fc="fzf --preview='cat {}'"
 
 # Git stuff
 alias lg="lazygit"
@@ -103,3 +104,6 @@ getStatus() {
     git show --name-status "$1"
 }
 
+fnv() {
+    nvim $(fzf --preview='cat {}')
+}
