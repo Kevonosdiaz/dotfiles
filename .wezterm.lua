@@ -19,35 +19,69 @@ config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } -- Disable font liga
 config.enable_scroll_bar = true
 config.default_prog = { "bash" }
 
--- Customize top tabbar
-config.window_frame = {
-	font = wezterm.font({ family = "JetBrainsMono Nerd Font" }),
-	font_size = 12,
-}
+config.use_fancy_tab_bar = false
 
-wezterm.on("update-status", function(window)
-	-- Grab the utf8 character for the "powerline" left facing
-	-- solid arrow.
-	local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+-- The filled in variant of the < symbol
+local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_left_half_circle_thick
 
-	-- Grab the current window's configuration, and from it the
-	-- palette (this is the combination of your chosen colour scheme
-	-- including any overrides).
-	local color_scheme = window:effective_config().resolved_palette
-	local bg = color_scheme.background
-	local fg = color_scheme.foreground
+-- The filled in variant of the > symbol
+local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_right_half_circle_thick
 
-	window:set_right_status(wezterm.format({
-		-- First, we draw the arrow...
-		{ Background = { Color = "none" } },
-		{ Foreground = { Color = bg } },
+-- This function returns the suggested title for a tab.
+-- It prefers the title that was set via `tab:set_title()`
+-- or `wezterm cli set-tab-title`, but falls back to the
+-- title of the active pane in that tab.
+function tab_title(tab_info)
+	local title = tab_info.tab_title
+	-- if the tab title is explicitly set, take that
+	if title and #title > 0 then
+		return title
+	end
+	-- Otherwise, use the title from the active pane
+	-- in that tab
+	return tab_info.active_pane.title
+end
+
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	local edge_background = "#0b0022"
+	local background = "#181825"
+	local foreground = "#585b70"
+
+	if tab.is_active then
+		background = "#1E1E2F"
+		foreground = "#b4befe"
+	elseif hover then
+		background = "#6c7086"
+		foreground = "#9399b2"
+	end
+
+	local edge_foreground = background
+
+	local title = tab_title(tab)
+
+	-- ensure that the titles fit in the available space,
+	-- and that we have room for the edges.
+	title = wezterm.truncate_right(title, max_width - 2)
+
+	return {
+		{ Background = { Color = edge_background } },
+		{ Foreground = { Color = edge_foreground } },
 		{ Text = SOLID_LEFT_ARROW },
-		-- Then we draw our text
-		{ Background = { Color = bg } },
-		{ Foreground = { Color = fg } },
-		{ Text = " " .. wezterm.hostname() .. " " },
-	}))
+		{ Background = { Color = background } },
+		{ Foreground = { Color = foreground } },
+		{ Text = title },
+		{ Background = { Color = edge_background } },
+		{ Foreground = { Color = edge_foreground } },
+		{ Text = SOLID_RIGHT_ARROW },
+	}
 end)
+
+-- local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+-- tabline.setup({
+-- 	options = {
+-- 		theme = config.colors,
+-- 	},
+-- })
 
 -- Keymapping stuff
 config.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 1000 }
