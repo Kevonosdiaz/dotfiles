@@ -32,49 +32,49 @@ local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_right_half_circle_thick
 -- or `wezterm cli set-tab-title`, but falls back to the
 -- title of the active pane in that tab.
 function tab_title(tab_info)
-	local title = tab_info.tab_title
-	-- if the tab title is explicitly set, take that
-	if title and #title > 0 then
-		return title
-	end
-	-- Otherwise, use the title from the active pane
-	-- in that tab
-	return tab_info.active_pane.title
+    local title = tab_info.tab_title
+    -- if the tab title is explicitly set, take that
+    if title and #title > 0 then
+        return title
+    end
+    -- Otherwise, use the title from the active pane
+    -- in that tab
+    return tab_info.active_pane.title
 end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local edge_background = "#0b0022"
-	local background = "#181825"
-	local foreground = "#585b70"
+    local edge_background = "#0b0022"
+    local background = "#181825"
+    local foreground = "#585b70"
 
-	if tab.is_active then
-		background = "#1E1E2F"
-		foreground = "#b4befe"
-	elseif hover then
-		background = "#6c7086"
-		foreground = "#9399b2"
-	end
+    if tab.is_active then
+        background = "#1E1E2F"
+        foreground = "#b4befe"
+    elseif hover then
+        background = "#6c7086"
+        foreground = "#9399b2"
+    end
 
-	local edge_foreground = background
+    local edge_foreground = background
 
-	-- local title = tab_title(tab)
-	local title = string.format("%d", tab.tab_index)
+    -- local title = tab_title(tab)
+    local title = string.format("%d", tab.tab_index + 1)
 
-	-- ensure that the titles fit in the available space,
-	-- and that we have room for the edges.
-	title = wezterm.truncate_right(title, max_width - 2)
+    -- ensure that the titles fit in the available space,
+    -- and that we have room for the edges.
+    title = wezterm.truncate_right(title, max_width - 2)
 
-	return {
-		{ Background = { Color = edge_background } },
-		{ Foreground = { Color = edge_foreground } },
-		{ Text = SOLID_LEFT_ARROW .. utf8.char(0x2588) .. utf8.char(0x2588) },
-		{ Background = { Color = background } },
-		{ Foreground = { Color = foreground } },
-		{ Text = title },
-		{ Background = { Color = edge_background } },
-		{ Foreground = { Color = edge_foreground } },
-		{ Text = utf8.char(0x2588) .. utf8.char(0x2588) .. SOLID_RIGHT_ARROW },
-	}
+    return {
+        { Background = { Color = edge_background } },
+        { Foreground = { Color = edge_foreground } },
+        { Text = SOLID_LEFT_ARROW .. utf8.char(0x2588) .. utf8.char(0x2588) },
+        { Background = { Color = background } },
+        { Foreground = { Color = foreground } },
+        { Text = title },
+        { Background = { Color = edge_background } },
+        { Foreground = { Color = edge_foreground } },
+        { Text = utf8.char(0x2588) .. utf8.char(0x2588) .. SOLID_RIGHT_ARROW },
+    }
 end)
 
 -- local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
@@ -87,56 +87,65 @@ end)
 -- Keymapping stuff
 config.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
-	-- splitting
-	{
-		mods = "LEADER",
-		key = "w",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		mods = "LEADER",
-		key = "v",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
+    -- splitting
+    {
+        mods = "LEADER",
+        key = "w",
+        action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+    },
+    {
+        mods = "LEADER",
+        key = "v",
+        action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+    },
 
-	-- window navigation
-	{
-		key = "h",
-		mods = "ALT",
-		action = wezterm.action_callback(function(window, pane)
-			local tab = window:mux_window():active_tab()
-			if tab:get_pane_direction("Left") ~= nil then
-				window:perform_action(wezterm.action.ActivatePaneDirection("Left"), pane)
-			else
-				window:perform_action(wezterm.action.ActivateTabRelative(-1), pane)
-			end
-		end),
-	},
-	{ key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
-	{ key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
-	{
-		key = "l",
-		mods = "ALT",
-		action = wezterm.action_callback(function(window, pane)
-			local tab = window:mux_window():active_tab()
-			if tab:get_pane_direction("Right") ~= nil then
-				window:perform_action(wezterm.action.ActivatePaneDirection("Right"), pane)
-			else
-				window:perform_action(wezterm.action.ActivateTabRelative(1), pane)
-			end
-		end),
-	},
+    -- window navigation
+    {
+        key = "h",
+        mods = "ALT",
+        action = wezterm.action_callback(function(window, pane)
+            local tab = window:mux_window():active_tab()
+            if tab:get_pane_direction("Left") ~= nil then
+                window:perform_action(wezterm.action.ActivatePaneDirection("Left"), pane)
+            else
+                window:perform_action(wezterm.action.ActivateTabRelative(-1), pane)
+            end
+        end),
+    },
+    { key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
+    { key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
+    {
+        key = "l",
+        mods = "ALT",
+        action = wezterm.action_callback(function(window, pane)
+            local tab = window:mux_window():active_tab()
+            if tab:get_pane_direction("Right") ~= nil then
+                window:perform_action(wezterm.action.ActivatePaneDirection("Right"), pane)
+            else
+                window:perform_action(wezterm.action.ActivateTabRelative(1), pane)
+            end
+        end),
+    },
 
-	-- shortcuts
-	{
-		key = ",",
-		mods = "SUPER",
-		action = wezterm.action.SpawnCommandInNewTab({
-			cwd = wezterm.home_dir,
-			args = { "nvim", wezterm.config_file },
-		}),
-	},
+    -- shortcuts
+    {
+        key = ",",
+        mods = "SUPER",
+        action = wezterm.action.SpawnCommandInNewTab({
+            cwd = wezterm.home_dir,
+            args = { "nvim", wezterm.config_file },
+        }),
+    },
 }
+
+for i = 1, 9 do
+    table.insert(config.keys,
+        {
+            key = tostring(i),
+            mods = 'ALT',
+            action = wezterm.action.ActivateTab(i - 1),
+        })
+end
 
 config.show_tab_index_in_tab_bar = true
 -- Finally, return the configuration to wezterm:
