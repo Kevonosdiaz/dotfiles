@@ -57,7 +57,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 
 	local edge_foreground = background
 
-	local title = tab_title(tab)
+	-- local title = tab_title(tab)
+	local title = string.format("%d", tab.tab_index)
 
 	-- ensure that the titles fit in the available space,
 	-- and that we have room for the edges.
@@ -66,13 +67,13 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	return {
 		{ Background = { Color = edge_background } },
 		{ Foreground = { Color = edge_foreground } },
-		{ Text = SOLID_LEFT_ARROW },
+		{ Text = SOLID_LEFT_ARROW .. utf8.char(0x2588) .. utf8.char(0x2588) },
 		{ Background = { Color = background } },
 		{ Foreground = { Color = foreground } },
 		{ Text = title },
 		{ Background = { Color = edge_background } },
 		{ Foreground = { Color = edge_foreground } },
-		{ Text = SOLID_RIGHT_ARROW },
+		{ Text = utf8.char(0x2588) .. utf8.char(0x2588) .. SOLID_RIGHT_ARROW },
 	}
 end)
 
@@ -137,5 +138,6 @@ config.keys = {
 	},
 }
 
+config.show_tab_index_in_tab_bar = true
 -- Finally, return the configuration to wezterm:
 return config
