@@ -15,7 +15,7 @@ set $up k
 set $right l
 
 # Apps
-set $term kitty
+set $term wezterm
 set $menu fuzzel
 set $browser firefox
 set $editor code
@@ -58,7 +58,8 @@ output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25
 #
     # Spawn apps
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec $term --class="float"
+    # bindsym $mod+Shift+Return exec $term --class="float"
+    bindsym $mod+Shift+Return exec kitty
     bindsym $mod+f exec $browser
     bindsym $mod+c exec $editor
     bindsym $mod+e exec $file
