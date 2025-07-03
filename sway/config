@@ -43,8 +43,8 @@ bindsym $mod+Escape exec $lock
 
 
 # Desktop Setup
-set $disp1 "DP-2"
-set $disp2 "HDMI-A-1"
+set $center-mon "DP-2"
+set $left-mon "HDMI-A-1"
 output HDMI-A-1 pos 0 0 mode 1920x1080@143.998Hz
 output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25
     
