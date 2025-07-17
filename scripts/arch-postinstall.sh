@@ -3,7 +3,7 @@
 # Expected to be run after running arch-chroot /mnt
 
 # Install stuff and services
-pacman -S --noconfirm --needed bluez bluez-utils pipewire easyeffects vlc lsp-plugins amd-ucode noto-fonts noto-fonts-cjk noto-fonts-emoji timeshift fastfetch flameshot sddm pacman-contrib zoxide ranger fzf ripgrep python3 alacritty kitty btop bat ncdu vim neovim starship tmux unzip pavucontrol-qt feh brightnessctl playerctl zathura gnome-keyring libsecret firefox networkmanager network-manager-applet tree ntfs-3g os-prober linux-headers linux-lts linux-lts-headers efibootmgr wpa_supplicant wget unzip tealdeer wikiman arch-wiki-docs xorg-xhost
+pacman -S --noconfirm --needed bluez bluez-utils pipewire easyeffects vlc lsp-plugins amd-ucode noto-fonts noto-fonts-cjk noto-fonts-emoji timeshift fastfetch flameshot sddm pacman-contrib zoxide ranger fzf ripgrep python3 alacritty kitty btop bat ncdu vim neovim starship tmux unzip pavucontrol-qt feh brightnessctl playerctl zathura gnome-keyring libsecret firefox networkmanager network-manager-applet tree ntfs-3g os-prober linux-headers linux-lts linux-lts-headers efibootmgr wpa_supplicant wget unzip tealdeer wikiman arch-wiki-docs xorg-xhost archlinux-xdg-menu
 
 systemctl enable --now bluetooth.service
 systemctl enable sddm.service
