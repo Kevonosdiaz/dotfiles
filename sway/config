@@ -46,6 +46,7 @@ bindsym $mod+Escape exec $lock
 set $center-mon "DP-2"
 set $left-mon "HDMI-A-1"
 output HDMI-A-1 pos 0 0 mode 1920x1080@143.998Hz
+output 'Technical Concepts Ltd Beyond TV 0x00010000' mode 3840x2160@120.00Hz scale 2
 output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25
     
 

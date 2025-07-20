@@ -7,6 +7,7 @@ git clone https://github.com/casualsnek/waydroid_script
 # Simulate touch with cursor, enabled on per game/category basis
 # waydroid prop set persist.waydroid.fake_touch "com.HoYo*"
 # waydroid prop set persist.waydroid.fake_touch "*"
+# waydroid prop set persist.waydroid.fake_touch com.YoStarEN.*
 
 # Note, following /var/lib/waydroid/waydroid_base.prop file used:
 # sys.use_memfd=true
