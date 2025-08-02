@@ -30,6 +30,8 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 # lazygit
 export PATH="$HOME/lazygit/:$PATH"
 
+export MAKEFLAGS=-j$(nproc)
+
 # starship terminal prompt
 # eval "$(starship init bash)"
 
