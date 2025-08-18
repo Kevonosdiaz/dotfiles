@@ -22,11 +22,18 @@ set $editor code
 set $file dolphin
 
 # Startup
+# Assign workspaces for specific apps
+assign [class="steam"] 7
+# assign [class="discord"] 5
+assign [class="Spotify"] 3
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec nm-applet
 exec syncthing --no-browser
 exec_always autotiling
+exec steam
+exec spotify
+# exec discord
 
 # exec swayidle -w \
 #          timeout 1800 'swaylock -f -c 000000' \
@@ -64,6 +71,7 @@ output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25
     bindsym $mod+f exec $browser
     bindsym $mod+c exec $editor
     bindsym $mod+e exec $file
+    bindsym $mod+s exec spotify
     bindsym $mod+Shift+v exec pavucontrol-qt
 
     # Kill focused window
@@ -123,7 +131,7 @@ output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    # bindsym $mod+s layout stacking
     bindsym $mod+a layout tabbed
     bindsym $mod+z layout toggle split
 
