@@ -276,3 +276,4 @@ include /etc/sway/config.d/*
 include ~/.config/sway/windowrules
 include ~/.config/sway/input
 include ~/.config/sway/workspace
+include ~/.config/sway/games
