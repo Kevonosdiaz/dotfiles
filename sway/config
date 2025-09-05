@@ -33,6 +33,7 @@ exec syncthing --no-browser
 exec_always autotiling
 exec steam
 exec spotify
+exec XDG_MENU_PREFIX=arch- kbuildsycoca6
 # exec discord
 
 # exec swayidle -w \
