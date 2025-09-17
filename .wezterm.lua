@@ -2,6 +2,7 @@
 local wezterm = require("wezterm")
 
 -- This will hold the configuration.
+local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices.
@@ -100,32 +101,32 @@ config.keys = {
 	},
 
 	-- window navigation
-	{
-		key = "h",
-		mods = "ALT",
-		action = wezterm.action_callback(function(window, pane)
-			local tab = window:mux_window():active_tab()
-			if tab:get_pane_direction("Left") ~= nil then
-				window:perform_action(wezterm.action.ActivatePaneDirection("Left"), pane)
-			else
-				window:perform_action(wezterm.action.ActivateTabRelative(-1), pane)
-			end
-		end),
-	},
-	{ key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
-	{ key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
-	{
-		key = "l",
-		mods = "ALT",
-		action = wezterm.action_callback(function(window, pane)
-			local tab = window:mux_window():active_tab()
-			if tab:get_pane_direction("Right") ~= nil then
-				window:perform_action(wezterm.action.ActivatePaneDirection("Right"), pane)
-			else
-				window:perform_action(wezterm.action.ActivateTabRelative(1), pane)
-			end
-		end),
-	},
+	-- {
+	-- 	key = "h",
+	-- 	mods = "ALT",
+	-- 	action = wezterm.action_callback(function(window, pane)
+	-- 		local tab = window:mux_window():active_tab()
+	-- 		if tab:get_pane_direction("Left") ~= nil then
+	-- 			window:perform_action(wezterm.action.ActivatePaneDirection("Left"), pane)
+	-- 		else
+	-- 			window:perform_action(wezterm.action.ActivateTabRelative(-1), pane)
+	-- 		end
+	-- 	end),
+	-- },
+	-- { key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
+	-- { key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
+	-- {
+	-- 	key = "l",
+	-- 	mods = "ALT",
+	-- 	action = wezterm.action_callback(function(window, pane)
+	-- 		local tab = window:mux_window():active_tab()
+	-- 		if tab:get_pane_direction("Right") ~= nil then
+	-- 			window:perform_action(wezterm.action.ActivatePaneDirection("Right"), pane)
+	-- 		else
+	-- 			window:perform_action(wezterm.action.ActivateTabRelative(1), pane)
+	-- 		end
+	-- 	end),
+	-- },
 
 	-- shortcuts
 	{
@@ -146,6 +147,28 @@ for i = 1, 9 do
 	})
 end
 
+smart_splits.apply_to_config(config)
+-- smart_splits.apply_to_config(config, {
+-- 	-- the default config is here, if you'd like to use the default keys,
+-- 	-- you can omit this configuration table parameter and just use
+-- 	-- smart_splits.apply_to_config(config)
+--
+-- 	-- directional keys to use in order of: left, down, up, right
+-- 	direction_keys = { "h", "j", "k", "l" },
+-- 	-- if you want to use separate direction keys for move vs. resize, you
+-- 	-- can also do this:
+-- 	direction_keys = {
+-- 		move = { "h", "j", "k", "l" },
+-- 		resize = { "LeftArrow", "DownArrow", "UpArrow", "RightArrow" },
+-- 	},
+-- 	-- modifier keys to combine with direction_keys
+-- 	modifiers = {
+-- 		move = "CTRL", -- modifier to use for pane movement, e.g. CTRL+h to move left
+-- 		resize = "META", -- modifier to use for pane resize, e.g. META+h to resize to the left
+-- 	},
+-- 	-- log level to use: info, warn, error
+-- 	log_level = "info",
+-- })
 config.show_tab_index_in_tab_bar = true
 -- Finally, return the configuration to wezterm:
 return config
