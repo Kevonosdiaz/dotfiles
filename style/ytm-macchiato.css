@@ -32,6 +32,7 @@ html:not(.style-scope)
   --unthemed-yet: inherit !important;
 
   --yt-spec-commerce-filled-hover: var(--ctp-accent) !important;
+  --yt-spec-menu-background: var(--ctp-base) !important;
 }
 
 i.material-icons
@@ -305,7 +306,7 @@ yt-icon.icon.style-scope.ytmusic-play-button-renderer {
 }
 
 ytmusic-tabs.stuck {
-	background-color: var(--catppuccin-mantle) !important;
+	background-color: var(--ctp-mantle) !important;
 }
 
 paper-icon-button.ytmusic-like-button-renderer
@@ -1840,7 +1841,4 @@ yt-icon.ytmusic-guide-signin-promo-renderer {
   color: var(--ctp-accent) !important;
 }
 
-/* if you want to change the accent color, paste this in aswell and change the hex code - or use one of the predefined colors with var(--ctp-'color') - e.g. var(--ctp-maroon) */
-html:not(.style-scope) {
-    --ctp-accent: var(--ctp-maroon) !important;
-}
+--ctp-accent: var(--ctp-lavender) !important;
