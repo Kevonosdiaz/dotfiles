@@ -24,3 +24,7 @@ cargo install --git https://github.com/stefur/lizzy lizzy
 # Find EFI partition where Windows exists, mount it to /mnt
 # sudo cp -ax /mnt/EFI/Microsoft /boot/EFI/
 
+# Note: Adding printer to connect to
+# Install CUPS and Avahi, enable their services
+# Reference https://wiki.archlinux.org/title/Avahi#Hostname_resolution and
+# https://blog.yaymukund.com/posts/wireless-printers-on-swaywm/
