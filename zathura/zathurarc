@@ -1,0 +1,29 @@
+# include zathura-catppuccin-macchiato
+# AUR package: ttf-cm-unicode
+# set font "CMU Serif 14"
+
+# Map custom keybindings
+# Map 'q' to quit Zathura
+map q quit
+# Map 's' to toggle the statusbar
+map s toggle_statusbar
+# Map 'f' to toggle fullscreen mode
+map f toggle_fullscreen
+# Map 'r' to reload the document
+map r reload
+# Map 'j' to scroll down, 'k' to scroll up
+map j scroll down
+map k scroll up
+# Map 'H' to go to the previous page, 'L' to go to the next page
+map H navigate previous
+map L navigate next
+
+# Execute an external command on link click (e.g., open with default browser)
+map <C-l> exec "xdg-open $FILE"
+
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+map K zoom in
+map R rotate
+map J zoom out
+set selection-clipboard clipboard
