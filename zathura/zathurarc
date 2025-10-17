@@ -1,6 +1,5 @@
 # include zathura-catppuccin-macchiato
-# AUR package: ttf-cm-unicode
-# set font "CMU Serif 14"
+set font "JetBrainsMono 10"
 
 # Map custom keybindings
 # Map 'q' to quit Zathura
@@ -23,6 +22,10 @@ map <C-l> exec "xdg-open $FILE"
 
 set statusbar-h-padding 0
 set statusbar-v-padding 0
+set statusbar-bg "#1E1E2E"
+# set statusbar-bg "#FFFFFF"
+set statusbar-fg "#CDD6F4"
+
 map K zoom in
 map R rotate
 map J zoom out
