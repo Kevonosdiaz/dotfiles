@@ -19,7 +19,7 @@ set $term wezterm
 set $menu fuzzel
 set $browser firefox
 set $editor code
-set $file dolphin
+set $file thunar
 
 # Startup
 # Assign workspaces for specific apps
@@ -28,13 +28,12 @@ assign [class="steam"] 7
 assign [class="Spotify"] 3
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+# exec --no-startup-id /usr/lib/pam_kwallet_init
 exec nm-applet
 exec syncthing --no-browser
 exec_always autotiling
-exec steam
-exec spotify
-exec XDG_MENU_PREFIX=arch- kbuildsycoca6
-# exec discord
+exec_always XDG_MENU_PREFIX=arch- kbuildsycoca6
+
 
 # exec swayidle -w \
 #          timeout 1800 'swaylock -f -c 000000' \
@@ -53,9 +52,12 @@ bindsym $mod+Escape exec $lock
 # Desktop Setup
 set $center-mon "DP-2"
 set $left-mon "HDMI-A-1"
-output HDMI-A-1 pos 0 0 mode 1920x1080@143.998Hz
-output 'Technical Concepts Ltd Beyond TV 0x00010000' mode 3840x2160@120.00Hz scale 2
-output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25
+output HDMI-A-1 pos 0 0 mode 1920x1080@143.998Hz 
+output 'Technical Concepts Ltd Beyond TV 0x00010000' mode 3840x2160@120.00Hz scale 2 render_bit_depth 10 hdr off
+output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25 render_bit_depth 10 hdr off
+
+bindsym $mod+Shift+y exec "swaymsg output DP-2 hdr toggle"
+bindsym $mod+Shift+u exec "swaymsg output 'Technical Concepts Ltd Beyond TV 0x00010000' hdr toggle"
     
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -259,7 +261,7 @@ default_floating_border pixel 2
 # titlebar_border_thickness 0
 
 # Gaps and border
-# output * adaptive_sync on
+output * adaptive_sync on
 smart_borders on
 # client.focused          #ffc0cb #ffc0cb #ffffff #ffc0cb
 client.focused          #b7bdf8 #b7bdf8 #ffffff #b7bdf8   
