@@ -1,0 +1,5 @@
+[Unit]
+Description=Rotating 5 Elden Ring save backups
+
+[Service]
+ExecStart=/home/kevon/scripts/elden-ring-backup.sh

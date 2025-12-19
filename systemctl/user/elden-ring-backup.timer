@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Elden Ring backup every 60 minutes
+
+[Timer]
+# Runs 5 minutes after login, then every 60 minutes after that
+OnUnitActiveSec=60min
+OnBootSec=5min
+
+[Install]
+WantedBy=timers.target
