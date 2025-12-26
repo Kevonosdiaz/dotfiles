@@ -60,7 +60,8 @@ alias eb="nvim ~/.bashrc"
 alias et="nvim ~/.tmux.conf"
 alias en="nvim ~/.config/nvim/init.lua"
 alias enp="nvim ~/.config/nvim/lua/custom/plugins.lua"
-alias cdn="cd ~/.config/nvim/lua/custom/"
+alias cdn="cd ~/.config/nvim/"
+alias cdc="cd ~/.config/nvim/lua/custom/plugins/" # Alternatively: use <leader>sn from kickstart.nvim
 alias resource="source ~/.bashrc"
 alias s="source ~/.bashrc"
 alias updateDotfiles="cp ~/.bashrc ~/.bash_aliases .tmux.conf ~/dotfiles; cd ~/dotfiles; git status"
@@ -78,8 +79,12 @@ alias wshow="waydroid show-full-ui"
 alias wstop="waydroid session stop"
 alias wwidth="waydroid prop set persist.waydroid.width"
 alias wheight="waydroid prop set persist.waydroid.height"
-alias wrestore-dim="wwidth 2040 && wheight 1100"
+alias wrestore-bar="wwidth 2040 && wheight 1100"
+alias wrestore-full="wwidth 2048 && wheight 1152"
 alias dl-audio='yt-dlp -x --audio-quality 0 --no-keep-video --download-archive ~/dotfiles/backup/yt-dlp-archive.txt --embed-thumbnail --embed-metadata -o "%(title)s"'
+alias end-gamescope='killall -s KILL gamescope-wl'
+alias hbr-end='killall -s KILL HeavenBurnsRed.exe'
+alias todo='todoist'
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)
 findAndReplace() {
