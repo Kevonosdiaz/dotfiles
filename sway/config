@@ -30,6 +30,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 # exec --no-startup-id /usr/lib/pam_kwallet_init
 exec nm-applet
+exec sunsetr
 exec syncthing --no-browser
 exec_always autotiling
 exec_always XDG_MENU_PREFIX=arch- kbuildsycoca6
@@ -57,8 +58,7 @@ output 'Technical Concepts Ltd Beyond TV 0x00010000' mode 3840x2160@120.00Hz sca
 output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25 render_bit_depth 10 hdr off
 
 bindsym $mod+Shift+y exec "swaymsg output DP-2 hdr toggle"
-bindsym $mod+Shift+u exec "swaymsg output 'Technical Concepts Ltd Beyond TV 0x00010000' hdr toggle"
-    
+bindsym $mod+Shift+u exec "swaymsg output HDMI-A-1 hdr toggle"
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -74,7 +74,7 @@ bindsym $mod+Shift+u exec "swaymsg output 'Technical Concepts Ltd Beyond TV 0x00
     bindsym $mod+f exec $browser
     bindsym $mod+c exec $editor
     bindsym $mod+e exec $file
-    bindsym $mod+s exec spotify
+    bindsym $mod+s exec strawberry
     bindsym $mod+Shift+v exec pavucontrol-qt
 
     # Kill focused window

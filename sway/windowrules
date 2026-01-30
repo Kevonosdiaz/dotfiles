@@ -7,3 +7,5 @@ for_window [app_id="bubble"] floating enable
 for_window [app_id="float"] floating enable
 for_window [app_id="float"] resize set 960 600
 for_window [app_id="float"] opacity 0.95
+
+# for_window [app_id="steam"] floating enable
