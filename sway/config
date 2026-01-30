@@ -76,6 +76,8 @@ bindsym $mod+Shift+u exec "swaymsg output HDMI-A-1 hdr toggle"
     bindsym $mod+e exec $file
     bindsym $mod+s exec strawberry
     bindsym $mod+Shift+v exec pavucontrol-qt
+    bindsym $mod+t exec ~/Applications/Todoist*
+    bindsym $mod+Shift+s exec feh ~/sched.png
 
     # Kill focused window
     bindsym $mod+w kill
