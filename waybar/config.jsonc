@@ -4,6 +4,7 @@
     "sway/workspaces",
     // "idle_inhibitor",
     "custom/music",
+    "mpd"
   ],
   "modules-center": [
     "clock"
@@ -12,11 +13,11 @@
     "tray",
     "pulseaudio",
     // "backlight",
-    "temperature",
+    // "temperature",
     "cpu",
     "memory",
     "battery",
-    "network",
+    // "network",
     "custom/powermenu"
   ],
   "custom/launcher": {
@@ -59,7 +60,6 @@
     "format": "{:%I:%M %p  %A %b %d}",
     "tooltip": true,
     "tooltip-format": "{:%A, %d %B %Y}\n<tt>{calendar}</tt>"
-    // "tooltip-format": "上午：高数\n下午：Ps\n晚上：Golang\n<tt>{calendar}</tt>",
   },
   "memory": {
     "interval": 5,
@@ -91,25 +91,40 @@
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
   },
-  // "mpd": {
-  //   "max-length": 25,
-  //   "format": "<span foreground='#bb9af7'></span> {title}",
-  //   "format-paused": " {title}",
-  //   "format-stopped":"<span foreground='#bb9af7'></span>",
-  //   "format-disconnected": "",
-  //   "on-click": "mpc --quiet toggle",
-  //   "on-click-right": "mpc ls | mpc add",
-  //   "on-click-middle": "kitty ncmpcpp",
-  //   "on-scroll-up": "mpc --quiet prev",
-  //   "on-scroll-down": "mpc --quiet next",
-  //   "smooth-scrolling-threshold":5,
-  //   "tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
-  // },
+  "mpd": {
+	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+	"format-disconnected": "Disconnected ",
+	"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+	"interval": 2,
+	"consume-icons": {
+		"on": " " // Icon shows only when "consume" is on
+	},
+	"random-icons": {
+		"off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+		"on": " "
+	},
+	"repeat-icons": {
+		"on": " "
+	},
+	"single-icons": {
+		"on": "1 "
+	},
+	"state-icons": {
+		"paused": "",
+		"playing": ""
+	},
+	"tooltip-format": "MPD (connected)",
+	"tooltip-format-disconnected": "MPD (disconnected)",
+    "on-click": "rmpc remote keybind p",
+    "on-scroll-up": "rmpc remote keybind '>'",
+    "on-scroll-down": "rmpc remote keybind '<'",
+    "max-length": 70,
+  },
   "network": {
     "interval": 1,
-    "format-wifi": "󰒢 {essid}",
+    "format-wifi": "󰒢 ",
     "format-ethernet": "󰈀 ",
-    "format-linked": "󰒢 {essid} (No IP)",
+    // "format-linked": "󰒢 {essid} (No IP)",
     "format-disconnected": "󰒢 Disconnected",
     "tooltip": false
   },
