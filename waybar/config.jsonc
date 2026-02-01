@@ -92,15 +92,14 @@
     "on-scroll-down": "playerctl previous"
   },
   "mpd": {
-	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰎆 ",
-	"format-disconnected": "Disconnected ",
-	"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}({elapsedTime:%M:%S}/{totalTime:%M:%S}) {title} - {artist} 󰎆 ",
+	"format-disconnected": "",
+	"format-stopped": "",
 	"interval": 2,
 	"consume-icons": {
 		"on": " " // Icon shows only when "consume" is on
 	},
 	"random-icons": {
-		"off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
 		"on": " "
 	},
 	"repeat-icons": {
@@ -113,7 +112,7 @@
 		"paused": "",
 		"playing": ""
 	},
-	"tooltip-format": "MPD (connected)",
+	"tooltip-format": "{title} - ({elapsedTime:%M:%S}/{totalTime:%M:%S})\n{artist}",
 	"tooltip-format-disconnected": "MPD (disconnected)",
     "on-click": "rmpc remote keybind p",
     "on-scroll-up": "rmpc remote keybind '>'",
