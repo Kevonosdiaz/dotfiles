@@ -8,7 +8,6 @@ alias lah="ls -lah"
 
 # Nice to haves
 alias makej="make -j"
-alias mj="make -j"
 alias c="clear"
 alias fd="rg --files | rg"
 alias fc="fzf --preview='cat {}'"
@@ -20,16 +19,12 @@ alias ga="git add --all"
 alias gc="git commit -m"
 alias gd="git diff"
 alias gs="git status"
-alias log="git log"
 alias push="git push"
 alias pull="git pull"
 alias branch="git branch"
 alias b="git branch"
-alias checkout="git checkout"
 alias co="git checkout"
 alias gwl="git worktree list"
-alias gr="git remote"
-alias remote="git remote -v"
 
 # Docker
 alias dps="docker ps"
@@ -40,9 +35,6 @@ alias ta="tmux attach"
 alias refreshBelow="rm -rf build; mkdir build; cd build"
 alias refreshHere="cd ..; rm -rf build; mkdir build; cd build"
 alias refresh="refreshHere"
-alias srefreshBelow="sudo rm -rf build; mkdir build; cd build"
-alias srefreshHere="cd ..; srefreshBelow"
-alias srefresh="srefreshHere"
 
 # alias python="python3"
 alias p3="python3"
@@ -53,7 +45,6 @@ alias r=". ranger"
 alias n="nvim"
 alias wm="wikiman"
 
-alias e="export"
 alias ea="nvim ~/.bash_aliases"
 alias ewa="nvim ~/.bash_work_aliases"
 alias eb="nvim ~/.bashrc"
@@ -74,16 +65,15 @@ alias q="exit"
 alias se="sudoedit"
 
 # Arch Linux specific / desktop setup
-alias yay-clear="yay -Sc"
 alias wshow="waydroid show-full-ui"
 alias wstop="waydroid session stop"
+alias wreload="sudo systemctl restart waydroid-container.service"
 alias wwidth="waydroid prop set persist.waydroid.width"
 alias wheight="waydroid prop set persist.waydroid.height"
 alias wrestore-bar="wwidth 2040 && wheight 1100"
 alias wrestore-full="wwidth 2048 && wheight 1152"
-alias dl-audio='yt-dlp -x --audio-quality 0 --no-keep-video --download-archive ~/dotfiles/backup/yt-dlp-archive.txt --embed-thumbnail --embed-metadata -o "%(title)s"'
+alias dl-audio='yt-dlp -x --audio-quality 0 --no-keep-video --download-archive ~/dotfiles/backup/yt-dlp-archive.txt --embed-thumbnail --embed-metadata --cookies-from-browser firefox -o "%(title)s"'
 alias end-gamescope='killall -s KILL gamescope-wl'
-alias hbr-end='killall -s KILL HeavenBurnsRed.exe'
 alias todo='todoist'
 
 # Recursively replace string $1 with string $2 (may not work with whitespace?)

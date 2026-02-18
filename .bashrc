@@ -27,13 +27,21 @@ export MANPAGER='nvim +Man!'
 # if using emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
-# lazygit
-export PATH="$HOME/lazygit/:$PATH"
+# go, rust packages
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
-export MAKEFLAGS=-j$(nproc)
+# ROCm
+export PATH="$PATH:/opt/rocm/bin"
+
+# Elden Ring modding
+export PATH="$PATH:/home/kevon/.local/bin"
+
+# scrcpy stuff
+alias tablet-scrcpy="scrcpy --tcpip --video-codec=h264 -m 2960 -b 12M --max-fps=120 --video-buffer=25 -K --gamepad=uhid"
 
 # starship terminal prompt
-# eval "$(starship init bash)"
+eval "$(starship init bash)"
 
 # Set up fzf key bindings and fuzzy completion
 # source /usr/share/doc/fzf/examples/key-bindings.bash
@@ -142,3 +150,7 @@ fi
 # zoxide as cd improvement, install via:
 # curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 eval "$(zoxide init bash)"
+alias cd=z
+export XDG_MENU_PREFIX=arch-
+export GTK_THEME=catppuccin-macchiato-lavender-standard+default
+export MAKEFLAGS=-j$(nproc)

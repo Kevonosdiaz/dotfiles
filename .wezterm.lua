@@ -13,7 +13,7 @@ config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13
+config.font_size = 12
 config.color_scheme = "Catppuccin Mocha"
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } -- Disable font ligatures
 
