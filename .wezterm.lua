@@ -19,6 +19,7 @@ config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } -- Disable font liga
 
 config.enable_scroll_bar = true
 config.default_prog = { "bash" }
+config.enable_wayland = false
 
 config.use_fancy_tab_bar = false
 
