@@ -14,11 +14,11 @@
     "pulseaudio",
     // "backlight",
     // "temperature",
-    "cpu",
-    "memory",
+    // "cpu",
+    // "memory",
     "battery",
     // "network",
-    "custom/powermenu"
+    // "custom/powermenu"
   ],
   "custom/launcher": {
     "format": "󰣇 ",
