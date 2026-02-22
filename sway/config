@@ -18,7 +18,7 @@ set $right l
 set $term wezterm
 set $menu fuzzel
 set $browser firefox
-set $editor code
+set $editor emacsclient -c -a 'emacs' # Open new window, try with daemon running first
 set $file thunar
 
 # Startup
@@ -32,6 +32,7 @@ exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ss
 exec nm-applet
 exec sunsetr
 exec syncthing --no-browser
+exec /usr/bin/emacs --daemon
 exec_always mpd
 exec_always autotiling
 exec_always XDG_MENU_PREFIX=arch- kbuildsycoca6
@@ -56,11 +57,14 @@ set $center-mon "DP-2"
 set $left-mon "HDMI-A-1"
 output HDMI-A-1 pos 0 0 mode 1920x1080@143.998Hz 
 output 'Technical Concepts Ltd Beyond TV 0x00010000' mode 3840x2160@120.00Hz scale 2 render_bit_depth 10 hdr off adaptive_sync on
-
 output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25 render_bit_depth 10 hdr off adaptive_sync on
 
+# HDR toggles for each monitor
 bindsym $mod+Shift+y exec "swaymsg output DP-2 hdr toggle"
-bindsym $mod+Shift+u exec "swaymsg output HDMI-A-1 hdr toggle"
+# bindsym $mod+Shift+u exec "swaymsg output HDMI-A-1 hdr toggle"
+
+# Toggle off side monitor for just center monitor
+bindsym $mod+p exec swaymsg "output HDMI-A-1 toggle"
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -78,7 +82,8 @@ bindsym $mod+Shift+u exec "swaymsg output HDMI-A-1 hdr toggle"
     bindsym $mod+e exec $file
     bindsym $mod+s exec wezterm -e rmpc
     bindsym $mod+Shift+v exec pavucontrol-qt
-    bindsym $mod+t exec ~/Applications/Todoist*
+    # bindsym $mod+t exec ~/Applications/Todoist*
+    bindsym $mod+t exec todoist
     bindsym $mod+Shift+s exec feh ~/sched.png
 
     # Kill focused window
