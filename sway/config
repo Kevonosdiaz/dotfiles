@@ -232,10 +232,12 @@ bindsym $mod+Ctrl+Right         resize grow   width  5 px or 5 ppt
 
     # Media keys
     bindsym --locked $mod+XF86AudioPlay exec playerctl play-pause
+    bindsym --locked $mod+Cancel exec playerctl play-pause
     bindsym --locked $mod+XF86AudioPrev exec playerctl previous
     bindsym --locked $mod+XF86AudioNext exec playerctl next
 
     bindsym --locked XF86AudioPlay exec rmpc remote keybind p
+    bindsym --locked Cancel exec rmpc remote keybind p
     bindsym --locked XF86AudioPrev exec rmpc remote keybind "<"
     bindsym --locked XF86AudioNext exec rmpc remote keybind ">"
 
