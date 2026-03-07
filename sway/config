@@ -33,15 +33,17 @@ exec nm-applet
 exec sunsetr
 exec syncthing --no-browser
 exec /usr/bin/emacs --daemon
+exec_always mpdscribble
 exec_always mpd
 exec_always autotiling
 exec_always XDG_MENU_PREFIX=arch- kbuildsycoca6
 
 
-# exec swayidle -w \
-#          timeout 1800 'swaylock -f -c 000000' \
-#          timeout 3600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+         timeout 1800 'swaylock -f -c 000000' \
+         timeout 3600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 7200 'systemctl suspend' \
+         before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -50,6 +52,7 @@ exec_always XDG_MENU_PREFIX=arch- kbuildsycoca6
 set $lock 'swaylock -f'
 bindswitch --reload --locked lid:on exec $lock
 bindsym $mod+Escape exec $lock
+bindsym $mod+Shift+Escape exec swaylock -f -c 000000 && systemctl suspend
 
 
 # Desktop Setup

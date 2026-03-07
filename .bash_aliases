@@ -10,7 +10,7 @@ alias lah="ls -lah"
 alias makej="make -j"
 alias c="clear"
 alias fd="rg --files | rg"
-alias fc="fzf --preview='cat {}'"
+alias fc="fzf --preview='bat {}'"
 
 # Git stuff
 alias lg="lazygit"
@@ -100,5 +100,5 @@ getStatus() {
 }
 
 fnv() {
-    nvim $(fzf --preview='cat {}')
+    nvim $(fzf --preview='bat {}')
 }
