@@ -59,15 +59,15 @@ bindsym $mod+Shift+Escape exec swaylock -f -c 000000 && systemctl suspend
 set $center-mon "DP-2"
 set $left-mon "HDMI-A-1"
 output HDMI-A-1 pos 0 0 mode 1920x1080@143.998Hz 
-output 'Technical Concepts Ltd Beyond TV 0x00010000' mode 3840x2160@120.00Hz scale 2 render_bit_depth 10 hdr off adaptive_sync on
-output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25 render_bit_depth 10 hdr off adaptive_sync on
+output 'Technical Concepts Ltd Beyond TV 0x00010000' mode 3840x2160@120.00Hz scale 2 render_bit_depth 10 adaptive_sync on
+output DP-2 pos 1920 0 mode 2560x1440@359.999Hz scale 1.25 render_bit_depth 10 adaptive_sync on
 
 # HDR toggles for each monitor
-bindsym $mod+Shift+y exec "swaymsg output DP-2 hdr toggle"
+# bindsym $mod+Shift+y exec "swaymsg output DP-2 hdr toggle"
 # bindsym $mod+Shift+u exec "swaymsg output HDMI-A-1 hdr toggle"
 
 # Toggle off side monitor for just center monitor
-bindsym $mod+p exec swaymsg "output HDMI-A-1 toggle"
+# bindsym $mod+p exec swaymsg "output HDMI-A-1 toggle"
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -84,6 +84,7 @@ bindsym $mod+p exec swaymsg "output HDMI-A-1 toggle"
     bindsym $mod+c exec $editor
     bindsym $mod+e exec $file
     bindsym $mod+s exec wezterm -e rmpc
+    bindsym $mod+Shift+b exec blueman-manager
     bindsym $mod+Shift+v exec pavucontrol-qt
     # bindsym $mod+t exec ~/Applications/Todoist*
     bindsym $mod+t exec todoist
@@ -243,6 +244,8 @@ bindsym $mod+Ctrl+Right         resize grow   width  5 px or 5 ppt
     bindsym --locked Cancel exec rmpc remote keybind p
     bindsym --locked XF86AudioPrev exec rmpc remote keybind "<"
     bindsym --locked XF86AudioNext exec rmpc remote keybind ">"
+    bindsym --locked $mod+Control+1 exec rmpc remote keybind "<"
+    bindsym --locked $mod+Control+2 exec rmpc remote keybind ">"
 
 
 #

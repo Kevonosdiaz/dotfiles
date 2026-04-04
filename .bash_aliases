@@ -72,7 +72,7 @@ alias wwidth="waydroid prop set persist.waydroid.width"
 alias wheight="waydroid prop set persist.waydroid.height"
 alias wrestore-bar="wwidth 2040 && wheight 1100"
 alias wrestore-full="wwidth 2048 && wheight 1152"
-alias dl-audio='yt-dlp -x --audio-quality 0 --no-keep-video --download-archive ~/dotfiles/backup/yt-dlp-archive.txt --embed-thumbnail --embed-metadata --cookies-from-browser firefox -o "%(title)s"'
+alias dl-audio='yt-dlp -x --audio-format opus --audio-quality 0 --no-keep-video --download-archive ~/backup/yt-dlp-archive.txt --embed-thumbnail --embed-metadata --cookies-from-browser firefox -o "%(title)s"'
 alias end-gamescope='killall -s KILL gamescope-wl'
 alias todo='todoist'
 

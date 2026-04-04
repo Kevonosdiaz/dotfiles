@@ -37,6 +37,9 @@ export PATH="$PATH:/opt/rocm/bin"
 # Elden Ring modding
 export PATH="$PATH:/home/kevon/.local/bin"
 
+# Fix DBeaver UI on Wayland
+export GDK_BACKEND=x11
+
 # scrcpy stuff
 alias tablet-scrcpy="scrcpy --tcpip --video-codec=h264 -m 2960 -b 12M --max-fps=120 --video-buffer=25 -K --gamepad=uhid"
 
