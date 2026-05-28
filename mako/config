@@ -29,4 +29,8 @@ default-timeout=4000
 
 [urgency=critical]
 border-color=#bf616a
-default-timeout=10000
+default-timeout=0
+
+[app-name=Crash Reporting System]
+default-timeout=0
+invisible=1
