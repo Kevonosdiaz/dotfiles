@@ -8,13 +8,14 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices.
 
 -- For example, changing the initial geometry for new windows:
-config.initial_cols = 120
-config.initial_rows = 28
+config.initial_cols = 188
+config.initial_rows = 40
 
 -- or, changing the font size and color scheme.
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 12
-config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "luna"
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } -- Disable font ligatures
 
 config.enable_scroll_bar = true
@@ -35,49 +36,62 @@ local TAB_END_RIGHT = utf8.char(0x2588)
 -- or `wezterm cli set-tab-title`, but falls back to the
 -- title of the active pane in that tab.
 function tab_title(tab_info)
-	local title = tab_info.tab_title
-	-- if the tab title is explicitly set, take that
-	if title and #title > 0 then
-		return title
-	end
-	-- Otherwise, use the title from the active pane
-	-- in that tab
-	return tab_info.active_pane.title
+  local title = tab_info.tab_title
+  -- if the tab title is explicitly set, take that
+  if title and #title > 0 then
+    return title
+  end
+  -- Otherwise, use the title from the active pane
+  -- in that tab
+  return tab_info.active_pane.title
 end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local edge_background = "#0b0022"
-	local background = "#181825"
-	local foreground = "#585b70"
+  -- local edge_background = "#0b0022"
+  -- local background = "#181825"
+  -- local foreground = "#585b70"
+  --
+  -- if tab.is_active then
+  --   background = "#1E1E2F"
+  --   foreground = "#b4befe"
+  -- elseif hover then
+  --   background = "#6c7086"
+  --   foreground = "#9399b2"
+  -- end
+  local edge_background = "#0b0022"
+  -- local background = "#1c1c1c"
+  local background = "#000000"
+  local foreground = "#e4e4e8"
 
-	if tab.is_active then
-		background = "#1E1E2F"
-		foreground = "#b4befe"
-	elseif hover then
-		background = "#6c7086"
-		foreground = "#9399b2"
-	end
+  if tab.is_active then
+    background = "#c4c4c4"
+    foreground = "#060606"
+    -- background = "#060606"
+  elseif hover then
+    background = "#c4c4c4"
+    foreground = "#1c1c1c"
+  end
 
-	local edge_foreground = background
+  local edge_foreground = background
 
-	-- local title = tab_title(tab)
-	local title = string.format("%d", tab.tab_index + 1)
+  -- local title = tab_title(tab)
+  local title = string.format("%d", tab.tab_index + 1)
 
-	-- ensure that the titles fit in the available space,
-	-- and that we have room for the edges.
-	title = wezterm.truncate_right(title, max_width - 2)
+  -- ensure that the titles fit in the available space,
+  -- and that we have room for the edges.
+  title = wezterm.truncate_right(title, max_width - 2)
 
-	return {
-		{ Background = { Color = edge_background } },
-		{ Foreground = { Color = edge_foreground } },
-		{ Text = TAB_END_LEFT .. utf8.char(0x2588) .. utf8.char(0x2588) },
-		{ Background = { Color = background } },
-		{ Foreground = { Color = foreground } },
-		{ Text = title },
-		{ Background = { Color = edge_background } },
-		{ Foreground = { Color = edge_foreground } },
-		{ Text = utf8.char(0x2588) .. utf8.char(0x2588) .. TAB_END_RIGHT },
-	}
+  return {
+    { Background = { Color = edge_background } },
+    { Foreground = { Color = edge_foreground } },
+    { Text = TAB_END_LEFT .. utf8.char(0x2588) .. utf8.char(0x2588) },
+    { Background = { Color = background } },
+    { Foreground = { Color = foreground } },
+    { Text = title },
+    { Background = { Color = edge_background } },
+    { Foreground = { Color = edge_foreground } },
+    { Text = utf8.char(0x2588) .. utf8.char(0x2588) .. TAB_END_RIGHT },
+  }
 end)
 
 -- local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
@@ -90,63 +104,63 @@ end)
 -- Keymapping stuff
 config.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
-	-- splitting
-	{
-		mods = "LEADER",
-		key = "w",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		mods = "LEADER",
-		key = "v",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
+  -- splitting
+  {
+    mods = "LEADER",
+    key = "w",
+    action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+  },
+  {
+    mods = "LEADER",
+    key = "v",
+    action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+  },
 
-	-- window navigation
-	-- {
-	-- 	key = "h",
-	-- 	mods = "ALT",
-	-- 	action = wezterm.action_callback(function(window, pane)
-	-- 		local tab = window:mux_window():active_tab()
-	-- 		if tab:get_pane_direction("Left") ~= nil then
-	-- 			window:perform_action(wezterm.action.ActivatePaneDirection("Left"), pane)
-	-- 		else
-	-- 			window:perform_action(wezterm.action.ActivateTabRelative(-1), pane)
-	-- 		end
-	-- 	end),
-	-- },
-	-- { key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
-	-- { key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
-	-- {
-	-- 	key = "l",
-	-- 	mods = "ALT",
-	-- 	action = wezterm.action_callback(function(window, pane)
-	-- 		local tab = window:mux_window():active_tab()
-	-- 		if tab:get_pane_direction("Right") ~= nil then
-	-- 			window:perform_action(wezterm.action.ActivatePaneDirection("Right"), pane)
-	-- 		else
-	-- 			window:perform_action(wezterm.action.ActivateTabRelative(1), pane)
-	-- 		end
-	-- 	end),
-	-- },
+  -- window navigation
+  -- {
+  -- 	key = "h",
+  -- 	mods = "ALT",
+  -- 	action = wezterm.action_callback(function(window, pane)
+  -- 		local tab = window:mux_window():active_tab()
+  -- 		if tab:get_pane_direction("Left") ~= nil then
+  -- 			window:perform_action(wezterm.action.ActivatePaneDirection("Left"), pane)
+  -- 		else
+  -- 			window:perform_action(wezterm.action.ActivateTabRelative(-1), pane)
+  -- 		end
+  -- 	end),
+  -- },
+  -- { key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
+  -- { key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
+  -- {
+  -- 	key = "l",
+  -- 	mods = "ALT",
+  -- 	action = wezterm.action_callback(function(window, pane)
+  -- 		local tab = window:mux_window():active_tab()
+  -- 		if tab:get_pane_direction("Right") ~= nil then
+  -- 			window:perform_action(wezterm.action.ActivatePaneDirection("Right"), pane)
+  -- 		else
+  -- 			window:perform_action(wezterm.action.ActivateTabRelative(1), pane)
+  -- 		end
+  -- 	end),
+  -- },
 
-	-- shortcuts
-	{
-		key = ",",
-		mods = "SUPER",
-		action = wezterm.action.SpawnCommandInNewTab({
-			cwd = wezterm.home_dir,
-			args = { "nvim", wezterm.config_file },
-		}),
-	},
+  -- shortcuts
+  {
+    key = ",",
+    mods = "SUPER",
+    action = wezterm.action.SpawnCommandInNewTab({
+      cwd = wezterm.home_dir,
+      args = { "nvim", wezterm.config_file },
+    }),
+  },
 }
 
 for i = 1, 9 do
-	table.insert(config.keys, {
-		key = tostring(i),
-		mods = "ALT",
-		action = wezterm.action.ActivateTab(i - 1),
-	})
+  table.insert(config.keys, {
+    key = tostring(i),
+    mods = "ALT",
+    action = wezterm.action.ActivateTab(i - 1),
+  })
 end
 
 smart_splits.apply_to_config(config)
