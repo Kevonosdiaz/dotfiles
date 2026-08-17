@@ -59,14 +59,12 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   --   foreground = "#9399b2"
   -- end
   local edge_background = "#0b0022"
-  -- local background = "#1c1c1c"
   local background = "#000000"
-  local foreground = "#e4e4e8"
+  local foreground = "#6d6d6d"
 
   if tab.is_active then
-    background = "#c4c4c4"
-    foreground = "#060606"
-    -- background = "#060606"
+    background = "#212121"
+    foreground = "#e4e4e8"
   elseif hover then
     background = "#c4c4c4"
     foreground = "#1c1c1c"
