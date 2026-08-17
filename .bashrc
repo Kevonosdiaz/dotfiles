@@ -157,3 +157,8 @@ alias cd=z
 export XDG_MENU_PREFIX=arch-
 export GTK_THEME=catppuccin-macchiato-lavender-standard+default
 export MAKEFLAGS=-j$(nproc)
+
+if grep -qv 'fish' /proc/$PPID/comm && [[ ${SHLVL} == [1,2] ]]
+then
+	exec fish
+fi
