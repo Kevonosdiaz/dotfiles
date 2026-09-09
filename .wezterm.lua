@@ -83,8 +83,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     background = "#21242B"
     foreground = "#e4e4e8"
   elseif hover then
-    background = "#c4c4c4"
-    foreground = "#1c1c1c"
+    background = "#818a8a"
+    foreground = "#000000"
   end
 
   local edge_foreground = background
@@ -108,6 +108,19 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     { Text = utf8.char(0x2588) .. utf8.char(0x2588) .. TAB_END_RIGHT },
   }
 end)
+
+config.colors = {
+  tab_bar = {
+    -- Background color of the entire tab bar strip
+    background = "#282C34",
+
+    -- New tab button
+    new_tab = {
+      bg_color = "#21242B",
+      fg_color = "#A9A1E1",
+    },
+  },
+}
 
 -- Keymapping stuff
 config.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 1000 }
@@ -135,6 +148,7 @@ config.keys = {
   },
 }
 
+-- Switch to tab # with <Alt + #>
 for i = 1, 9 do
   table.insert(config.keys, {
     key = tostring(i),
