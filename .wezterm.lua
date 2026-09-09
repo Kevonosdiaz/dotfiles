@@ -120,6 +120,9 @@ config.colors = {
       fg_color = "#A9A1E1",
     },
   },
+
+  cursor_bg = "#A9A1E1",
+  cursor_border = "#A9A1E1",
 }
 
 -- Keymapping stuff
