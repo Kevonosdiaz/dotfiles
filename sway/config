@@ -24,6 +24,7 @@ set $file thunar
 
 # Startup
 # Assign workspaces for specific apps
+assign [class="steam_proton"] 2
 assign [class="steam"] 7
 # assign [class="discord"] 5
 assign [class="Spotify"] 3
