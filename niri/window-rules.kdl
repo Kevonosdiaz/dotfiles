@@ -1,0 +1,78 @@
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Window-Rules
+
+// Work around WezTerm's initial configure bug
+// by setting an empty default-column-width.
+window-rule {
+    // This regular expression is intentionally made as specific as possible,
+    // since this is the default config, and we want no false positives.
+    // You can get away with just app-id="wezterm" if you want.
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width { proportion 0.5; }
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Example: block out two password managers from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+// Example: enable rounded corners for all windows.
+// (This example rule is commented out with a "/-" in front.)
+/-window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+// Open Steam as full window on workspace 3 (if workspace 3 exists)
+window-rule {
+    match title="Steam"
+    default-column-width { proportion 1.0; }
+    open-on-output "HDMI-A-1"
+    open-on-workspace "3"
+}
+
+// Open Steam games on specific monitor
+window-rule {
+    match app-id=r#"^steam_app_.*"#
+    open-on-output "DP-2"
+    open-fullscreen true
+}
+
+window-rule {
+    match app-id="gamescope"
+    open-on-output "DP-2"
+    open-fullscreen true
+}
+
+window-rule {
+    match app-id="pavucontrol-qt"
+    open-floating true
+    opacity 0.8
+    default-column-width { proportion 0.4; }
+    default-window-height { fixed 960; }
+}
+
+window-rule {
+    match app-id="feh"
+    open-floating true
+    opacity 1.0
+    // default-column-width { proportion 0.4; }
+    // default-window-height { fixed 960; }
+}
