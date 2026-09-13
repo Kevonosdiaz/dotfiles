@@ -141,7 +141,6 @@ layout {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
-        proportion 1.0
 
         // Fixed sets the width in logical pixels exactly.
         // fixed 1920
@@ -293,7 +292,7 @@ spawn-at-startup "mpd"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -352,7 +351,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
     Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+F hotkey-overlay-title="Run browser: Firefox" { spawn "firefox"; }
+    Mod+Shift+F hotkey-overlay-title="Run browser: Firefox" { spawn "firefox"; }
     Mod+Escape hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+E hotkey-overlay-title="Run file editor: thunar" { spawn "thunar"; }
 
@@ -536,15 +535,15 @@ binds {
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
 
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Ctrl+1 { move-column-to-workspace 1 focus=false; }
+    Mod+Ctrl+2 { move-column-to-workspace 2 focus=false; }
+    Mod+Ctrl+3 { move-column-to-workspace 3 focus=false; }
+    Mod+Ctrl+4 { move-column-to-workspace 4 focus=false; }
+    Mod+Ctrl+5 { move-column-to-workspace 5 focus=false; }
+    Mod+Ctrl+6 { move-column-to-workspace 6 focus=false; }
+    Mod+Ctrl+7 { move-column-to-workspace 7 focus=false; }
+    Mod+Ctrl+8 { move-column-to-workspace 8 focus=false; }
+    Mod+Ctrl+9 { move-column-to-workspace 9 focus=false; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
@@ -582,7 +581,7 @@ binds {
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+F { expand-column-to-available-width; }
 
     Mod+C { center-column; }
 
@@ -642,4 +641,7 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    // Toggle side monitor, checks if disabled to turn on, otherwise turn off
+    Mod+P { spawn-sh "niri msg outputs | rg -A 1 HDMI-A-1 | rg -q Disabled && niri msg output HDMI-A-1 on || niri msg output HDMI-A-1 off"; }
 }
