@@ -118,6 +118,12 @@ output "DP-2" {
     position x=1920 y=0
 }
 
+output "eDP-1" {
+    mode "1920x1080@60.000"
+    scale 1.00
+    transform "normal"
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Layout
@@ -370,7 +376,6 @@ binds {
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
-
     // Toggle & reload waybar
     Mod+N { spawn-sh "killall -SIGUSR1 waybar"; }
     Mod+Shift+C { spawn-sh "killall -SIGUSR2 waybar"; }
