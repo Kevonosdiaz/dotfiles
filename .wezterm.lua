@@ -131,12 +131,12 @@ config.keys = {
   -- splitting
   {
     mods = "LEADER",
-    key = "w",
+    key = "v",
     action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
   },
   {
     mods = "LEADER",
-    key = "v",
+    key = "w",
     action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
   },
 
