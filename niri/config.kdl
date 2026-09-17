@@ -63,7 +63,7 @@ input {
         // middle-emulation
     }
 
-    workspace-auto-back-and-forth
+    // workspace-auto-back-and-forth
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
     // warp-mouse-to-focus
@@ -322,9 +322,9 @@ animations {
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
 
-    workspace-switch {
-        off
-    }
+    // workspace-switch {
+    //     off
+    // }
 }
 
 gestures {
@@ -357,6 +357,9 @@ binds {
     Mod+Escape hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+E hotkey-overlay-title="Run file editor: thunar" { spawn "thunar"; }
 
+    Mod+Shift+Escape { spawn-sh "swaylock -f -c 000000 && systemctl suspend"; }
+    Mod+Shift+C { spawn "qtcreator"; }
+
     Mod+Shift+T { spawn "todoist"; }
     Mod+S { spawn-sh "wezterm -e rmpc"; }
     Mod+Shift+V { spawn "pavucontrol-qt"; }
@@ -373,14 +376,14 @@ binds {
 
     // Toggle & reload waybar
     Mod+N { spawn-sh "killall -SIGUSR1 waybar"; }
-    Mod+Shift+C { spawn-sh "killall -SIGUSR2 waybar"; }
+    Mod+Ctrl+C { spawn-sh "killall -SIGUSR2 waybar"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
     // "-l 1.0" limits the volume to 100%.
-    Mod+XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    Mod+XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    Mod+XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.03+ -l 1.0"; }
+    Mod+XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.03-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
@@ -573,7 +576,12 @@ binds {
     Mod+Ctrl+R { reset-window-height; }
 
     Mod+Q { fullscreen-window; }
-    Mod+Shift+Q { maximize-column; }
+    Mod+F { maximize-column; }
+
+    // Expand the focused column to space not taken up by other fully visible columns.
+    // Makes the column "fill the rest of the space".
+    Mod+Shift+Q { expand-column-to-available-width; }
+
 
     // While maximize-column leaves gaps and borders around the window,
     // maximize-window-to-edges doesn't: the window expands to the edges of the screen.
@@ -581,14 +589,10 @@ binds {
     // e.g. by double-clicking on the titlebar.
     Mod+M { maximize-window-to-edges; }
 
-    // Expand the focused column to space not taken up by other fully visible columns.
-    // Makes the column "fill the rest of the space".
-    Mod+F { expand-column-to-available-width; }
-
     Mod+C { center-column; }
 
     // Center all fully visible columns on screen.
-    Mod+Ctrl+C { center-visible-columns; }
+    // Mod+Ctrl+C { center-visible-columns; }
 
     // Finer width adjustments.
     // This command can also:
