@@ -5,11 +5,14 @@ end
 fish_add_path -p $HOME/.local/bin $HOME/neovim/bin $HOME/go/bin $HOME/.cargo/bin
 
 # Aliases
+alias l "ls -a"
 alias cd z
 alias p3 python3
 alias lg lazygit
 alias c clear
 alias n nvim
+alias nd "nvim ~/repos/notes/dev/devlog.org"
+alias q exit
 alias cx "cd .."
 alias cxx "cd ../.."
 alias se "sudoedit"
@@ -36,6 +39,7 @@ alias wrestore-bar "wwidth 2040 && wheight 1100"
 alias wrestore-full "wwidth 2048 && wheight 1152"
 
 alias dlaudio "yt-dlp -x --audio-quality 0 --no-keep-video --download-archive ~/backup/yt-dlp-archive.txt --embed-thumbnail --embed-metadata -o '%(title)s'"
+alias dlaudio-na "yt-dlp -x --audio-quality 0 --no-keep-video --embed-thumbnail --embed-metadata -o '%(title)s'"
 alias cliplist "cliphist list | fzf --no-sort | cliphist decode | wl-copy"
 
 # Exports
