@@ -27,7 +27,7 @@
     "tooltip": false
   },
   "sway/workspaces": {
-    "disable-scroll": true,
+    "disable-scroll": true
   },
   "pulseaudio": {
     "scroll-step": 1,
@@ -36,10 +36,9 @@
     "format-icons": {
       "default": ["", "", ""]
     },
-    "scroll-step": 1,
     // "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click": "pavucontrol-qt",
-    "tooltip": false,
+    "tooltip": false
   },
   "battery": {
     "interval": 30,
@@ -66,8 +65,8 @@
     "interval": 5,
     "format": " {percentage}%",
     "states": {
-      "warning": 85,
-    },
+      "warning": 85
+    }
   },
   "cpu": {
     "interval": 5,
@@ -93,32 +92,33 @@
     "on-scroll-down": "playerctl previous"
   },
   "mpd": {
-	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}({elapsedTime:%M:%S}/{totalTime:%M:%S}) {title} - {artist} 󰎆 ",
-	"format-disconnected": "",
-	"format-stopped": "",
-	"interval": 2,
-	"consume-icons": {
-		"on": " " // Icon shows only when "consume" is on
-	},
-	"random-icons": {
-		"on": " "
-	},
-	"repeat-icons": {
-		"on": " "
-	},
-	"single-icons": {
-		"on": "1 "
-	},
-	"state-icons": {
-		"paused": "",
-		"playing": ""
-	},
-	"tooltip-format": "{title} - ({elapsedTime:%M:%S}/{totalTime:%M:%S})\n{artist}",
-	"tooltip-format-disconnected": "MPD (disconnected)",
+    "port": 6601,
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}({elapsedTime:%M:%S}/{totalTime:%M:%S}) {title} - {artist} 󰎆 ",
+    "format-disconnected": "",
+    "format-stopped": "",
+    "interval": 2,
+    "consume-icons": {
+      "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": "1 "
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "{title} - ({elapsedTime:%M:%S}/{totalTime:%M:%S})\n{artist}",
+    "tooltip-format-disconnected": "MPD (disconnected)",
     "on-click": "rmpc remote keybind p",
     "on-scroll-up": "rmpc remote keybind '>'",
     "on-scroll-down": "rmpc remote keybind '<'",
-    "max-length": 70,
+    "max-length": 70
   },
   "network": {
     "interval": 1,
@@ -142,5 +142,5 @@
   "tray": {
     "icon-size": 17,
     "spacing": 8
-  },
+  }
 }
