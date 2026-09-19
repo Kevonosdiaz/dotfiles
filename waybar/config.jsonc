@@ -2,6 +2,7 @@
   "modules-left": [
     "custom/launcher",
     "sway/workspaces",
+    "niri/workspaces",
     // "idle_inhibitor",
     "custom/music",
     "mpd"
@@ -16,7 +17,7 @@
     // "temperature",
     // "cpu",
     // "memory",
-    "battery",
+    "battery"
     // "network",
     // "custom/powermenu"
   ],
