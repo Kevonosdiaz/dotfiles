@@ -272,6 +272,9 @@ spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-at-startup "mpdscribble"
 spawn-at-startup "mpd"
 
+// Wallpaper
+spawn-sh-at-startup "swaybg -o HDMI-A-1 --image ~/Pictures/Wallpaper/Arknights/Arknights1stAnniv.jpg --mode fill -o DP-2 --image ~/Pictures/Wallpaper/Arknights/mizuki1440.jpg --mode fill"
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 

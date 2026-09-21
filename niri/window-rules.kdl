@@ -36,6 +36,11 @@ window-rule {
     default-column-width { proportion 1.0; }
 }
 
+window-rule {
+    match app-id="gimp"
+    default-column-width { proportion 1.0; }
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -63,6 +68,13 @@ window-rule {
     open-on-workspace "3"
 }
 
+window-rule {
+    match title="Steam Big Picture Mode"
+    open-fullscreen true
+    default-column-width { proportion 1.0; }
+    open-on-output "HDMI-A-1"
+}
+
 // Open Steam games on specific monitor
 window-rule {
     match app-id=r#"^steam_app_.*"#
@@ -74,6 +86,12 @@ window-rule {
     match app-id="gamescope"
     open-on-output "DP-2"
     open-fullscreen true
+}
+
+window-rule {
+    match title="Arknights"
+    open-on-output "DP-2"
+    default-column-width { proportion 1.0; }
 }
 
 window-rule {
