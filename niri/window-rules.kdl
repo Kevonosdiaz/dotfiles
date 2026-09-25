@@ -63,9 +63,9 @@ window-rule {
 // Open Steam as full window on workspace 3 (if workspace 3 exists)
 window-rule {
     match title="Steam"
-    default-column-width { proportion 1.0; }
+    default-column-width { proportion 0.66667; }
     open-on-output "HDMI-A-1"
-    open-on-workspace "3"
+    open-on-workspace "2"
 }
 
 window-rule {
