@@ -59,3 +59,6 @@ end
 
 zoxide init fish | source
 starship init fish | source
+
+set -gx LS_COLORS (vivid generate catppuccin-mocha)
+starship init fish | source
