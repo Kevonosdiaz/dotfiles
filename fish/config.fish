@@ -59,3 +59,4 @@ end
 
 zoxide init fish | source
 starship init fish | source
+set -g fish_greeting ""
