@@ -272,6 +272,7 @@ spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-at-startup "mpdscribble"
 spawn-at-startup "mpd"
 spawn-at-startup "sunsetr"
+spawn-at-startup "super-productivity"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
