@@ -34,6 +34,7 @@ window-rule {
 window-rule {
     match app-id="superproductivity"
     default-column-width { proportion 1.0; }
+    open-on-output "HDMI-A-1"
 }
 
 // Example: block out two password managers from screen capture.
