@@ -2,7 +2,7 @@ if status is-interactive
 # Commands to run in interactive sessions can go here
 end
 
-fish_add_path -p $HOME/.local/bin $HOME/neovim/bin $HOME/go/bin $HOME/.cargo/bin
+fish_add_path -p $HOME/.local/bin $HOME/neovim/bin $HOME/go/bin $HOME/.cargo/bin $HOME/tools/misc-scripts
 
 # Aliases
 alias l "ls -a"
@@ -16,6 +16,7 @@ alias q exit
 alias cx "cd .."
 alias cxx "cd ../.."
 alias se "sudoedit"
+alias y "yazi"
 
 alias ga "git add --all"
 alias gc "git commit -m"
