@@ -14,8 +14,8 @@ config.initial_rows = 40
 -- or, changing the font size and color scheme.
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 12
--- config.color_scheme = "Catppuccin Mocha"
-config.color_scheme = "luna"
+config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "luna"
 -- config.color_scheme = "DoomOne"
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } -- Disable font ligatures
 
@@ -49,30 +49,30 @@ end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   -- Tab title theming for Catppuccin
-  -- local edge_background = "#0b0022"
-  -- local background = "#181825"
-  -- local foreground = "#585b70"
-  --
-  -- if tab.is_active then
-  --   background = "#1E1E2F"
-  --   foreground = "#b4befe"
-  -- elseif hover then
-  --   background = "#6c7086"
-  --   foreground = "#9399b2"
-  -- end
-
-  -- Tab title theming for luna.nvim
   local edge_background = "#0b0022"
-  local background = "#000000"
-  local foreground = "#6d6d6d"
+  local background = "#181825"
+  local foreground = "#585b70"
 
   if tab.is_active then
-    background = "#212121"
-    foreground = "#e4e4e8"
+    background = "#1E1E2F"
+    foreground = "#b4befe"
   elseif hover then
-    background = "#c4c4c4"
-    foreground = "#1c1c1c"
+    background = "#6c7086"
+    foreground = "#9399b2"
   end
+
+  -- Tab title theming for luna.nvim
+  -- local edge_background = "#0b0022"
+  -- local background = "#000000"
+  -- local foreground = "#6d6d6d"
+
+  -- if tab.is_active then
+  --   background = "#212121"
+  --   foreground = "#e4e4e8"
+  -- elseif hover then
+  --   background = "#c4c4c4"
+  --   foreground = "#1c1c1c"
+  -- end
 
   -- Tab title theming for DoomOne theme
   -- local edge_background = "#0b0022"
@@ -115,7 +115,7 @@ config.colors = {
     -- One Doom
     -- background = "#282C34",
     -- luna.nvim
-    background = "#000000",
+    -- background = "#000000",
 
     -- New tab button
     new_tab = {
