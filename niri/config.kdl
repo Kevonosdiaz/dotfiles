@@ -29,7 +29,7 @@ input {
     touchpad {
         // off
         tap
-        // dwt
+        dwt
         // dwtp
         // drag false
         // drag-lock
@@ -350,6 +350,9 @@ binds {
     Mod+Ctrl+T { spawn "thunderbird"; }
     Mod+S { spawn-sh "wezterm -e rmpc"; }
     Mod+Shift+V { spawn "pavucontrol-qt"; }
+
+    Mod+Shift+Grave { spawn-sh "cmake --build /home/kevon/repos/playlist-manager/build/Desktop-Debug --target all -j 8"; }
+    Mod+Grave { spawn-sh "/home/kevon/repos/playlist-manager/build/Desktop_Debug/playlist-manager"; }
 
     // Swap two columns to the right side of current window
     Mod+Tab {
