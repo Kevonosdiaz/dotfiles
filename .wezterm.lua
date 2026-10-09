@@ -14,9 +14,9 @@ config.initial_rows = 40
 -- or, changing the font size and color scheme.
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 12
--- config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Catppuccin Mocha"
 -- config.color_scheme = "luna"
-config.color_scheme = "DoomOne"
+-- config.color_scheme = "DoomOne"
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } -- Disable font ligatures
 
 config.enable_scroll_bar = true
@@ -49,17 +49,17 @@ end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   -- Tab title theming for Catppuccin
-  -- local edge_background = "#0b0022"
-  -- local background = "#181825"
-  -- local foreground = "#585b70"
-  --
-  -- if tab.is_active then
-  --   background = "#1E1E2F"
-  --   foreground = "#b4befe"
-  -- elseif hover then
-  --   background = "#6c7086"
-  --   foreground = "#9399b2"
-  -- end
+  local edge_background = "#0b0022"
+  local background = "#181825"
+  local foreground = "#585b70"
+
+  if tab.is_active then
+    background = "#1E1E2F"
+    foreground = "#b4befe"
+  elseif hover then
+    background = "#6c7086"
+    foreground = "#9399b2"
+  end
 
   -- Tab title theming for luna.nvim
   -- local edge_background = "#0b0022"
@@ -75,17 +75,17 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   -- end
 
   -- Tab title theming for DoomOne theme
-  local edge_background = "#0b0022"
-  local background = "#282C34"
-  local foreground = "#6d6d6d"
-
-  if tab.is_active then
-    background = "#21242B"
-    foreground = "#e4e4e8"
-  elseif hover then
-    background = "#818a8a"
-    foreground = "#000000"
-  end
+  -- local edge_background = "#0b0022"
+  -- local background = "#282C34"
+  -- local foreground = "#6d6d6d"
+  --
+  -- if tab.is_active then
+  --   background = "#21242B"
+  --   foreground = "#e4e4e8"
+  -- elseif hover then
+  --   background = "#818a8a"
+  --   foreground = "#000000"
+  -- end
 
   local edge_foreground = background
 
@@ -112,7 +112,7 @@ end)
 config.colors = {
   tab_bar = {
     -- Background color of the entire tab bar strip
-    background = "#282C34",
+    -- background = "#282C34",
 
     -- New tab button
     new_tab = {

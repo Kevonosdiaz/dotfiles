@@ -60,19 +60,18 @@ window-rule {
     clip-to-geometry true
 }
 
-// Open Steam as full window on workspace 3 (if workspace 3 exists)
 window-rule {
-    match title="Steam"
+    match app-id="steam"
     default-column-width { proportion 0.66667; }
-    open-on-output "HDMI-A-1"
-    open-on-workspace "2"
+    // open-on-output "HDMI-A-1"
+    // open-on-workspace "2"
 }
 
 window-rule {
     match title="Steam Big Picture Mode"
     open-fullscreen true
     default-column-width { proportion 1.0; }
-    open-on-output "HDMI-A-1"
+    // open-on-output "HDMI-A-1"
 }
 
 // Open Steam games on specific monitor
@@ -92,6 +91,12 @@ window-rule {
     match title="Arknights"
     open-on-output "DP-2"
     default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match app-id="slaythespire2.exe"
+    open-on-output "DP-2"
+    open-fullscreen true
 }
 
 window-rule {

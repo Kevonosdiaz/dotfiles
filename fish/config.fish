@@ -2,7 +2,7 @@ if status is-interactive
 # Commands to run in interactive sessions can go here
 end
 
-fish_add_path -p $HOME/.local/bin $HOME/neovim/bin $HOME/go/bin $HOME/.cargo/bin
+fish_add_path -p $HOME/.local/bin $HOME/neovim/bin $HOME/go/bin $HOME/.cargo/bin $HOME/tools/misc-scripts
 
 # Aliases
 alias l "ls -a"
@@ -16,6 +16,7 @@ alias q exit
 alias cx "cd .."
 alias cxx "cd ../.."
 alias se "sudoedit"
+alias y "yazi"
 
 alias ga "git add --all"
 alias gc "git commit -m"
@@ -38,8 +39,8 @@ alias wheight "waydroid prop set persist.waydroid.height"
 alias wrestore-bar "wwidth 2040 && wheight 1100"
 alias wrestore-full "wwidth 2048 && wheight 1152"
 
-alias dlaudio "yt-dlp -x --audio-quality 0 --no-keep-video --download-archive ~/backup/yt-dlp-archive.txt --embed-thumbnail --embed-metadata -o '%(title)s'"
-alias dlaudio-na "yt-dlp -x --audio-quality 0 --no-keep-video --embed-thumbnail --embed-metadata -o '%(title)s'"
+alias dlaudioa "yt-dlp -x --audio-quality 0 --no-keep-video --download-archive ~/backup/yt-dlp-archive.txt --embed-thumbnail --embed-metadata -o '%(title)s'"
+alias dlaudio "yt-dlp -x --audio-quality 0 --no-keep-video --embed-thumbnail --embed-metadata -o '%(title)s'"
 alias cliplist "cliphist list | fzf --no-sort | cliphist decode | wl-copy"
 
 # Exports
