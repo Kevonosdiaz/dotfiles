@@ -16,7 +16,6 @@ alias q exit
 alias cx "cd .."
 alias cxx "cd ../.."
 alias se "sudoedit"
-alias y "yazi"
 
 alias ga "git add --all"
 alias gc "git commit -m"
@@ -56,6 +55,16 @@ end
 
 function getStatus -a commit
     command git show --name-status "$commit"
+end
+
+# Yazi wrapper for changing CWD
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	command yazi $argv --cwd-file="$tmp"
+	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+		builtin cd -- "$cwd"
+	end
+	command rm -f -- "$tmp"
 end
 
 zoxide init fish | source
