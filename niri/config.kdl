@@ -273,6 +273,7 @@ spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-at-startup "mpdscribble"
 spawn-at-startup "mpd"
 spawn-at-startup "sunsetr"
+spawn-sh-at-startup "llama-server --models-preset ~/tools/ai/models.ini --port 9931"
 // spawn-at-startup "super-productivity"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
