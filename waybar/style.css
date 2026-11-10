@@ -33,10 +33,14 @@ window > box {
   padding-right: 4px;
 }
 #workspaces button {
+  /* GTK theme sets button { min-width: 16px }; niri/workspaces (0.16+) packs
+     the label at the start of an inner box, so any extra width lands on the
+     right and the number looks left-aligned. */
+  min-width: 0;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 14px;
+  padding-right: 14px;
 }
 #workspaces button.focused {
   background-color: rgb(181, 232, 224);
